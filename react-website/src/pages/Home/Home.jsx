@@ -10,7 +10,7 @@ const Home = () => {
             <BannerHeader />
 
             <div className="content-wrapper">
-                asfasfaf
+                hahahah
             </div>
         </>
     );

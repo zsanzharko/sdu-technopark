@@ -7,7 +7,7 @@ import About from "./pages/About/About"
 import Actual from "./pages/Actual/Actual"
 import Contact from "./pages/Contact/Contact"
 import Cooperation from "./pages/Cooperation/Cooperation"
-import Faq from "./pages/FAQ/Faq"
+import Faq from "./pages/FAQ/faq"
 
 function App() {
   return (
