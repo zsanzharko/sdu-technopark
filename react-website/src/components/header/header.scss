@@ -1,104 +1,22 @@
 @import "../const/colors.scss";
 
-.main-nav {
-    position: absolute;
-    z-index: 10000;
-    left: 0px;
-    top: 0px;
-    padding: 0 1rem;
-    width: 100%;
-    height: 4rem;
-    background-color: $primary-color;
-    display: flex;
-    flex-direction: row;
-
-    .header-wrapper {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-
-        .header-logo {
-            display: flex;
-            height: 80%;
-            margin: auto 0;
-
-            >img {
-                padding: .1rem;
-                background-color: $lightness-color;
-                border-radius: .5rem;
-            }
-        }
-
-        >ul {
-            display: flex;
-            justify-content: space-between;
-            margin-left: auto;
-
-            >li {
-                list-style-type: none;
-                margin: auto 20px;
-
-                >a {
-                    color: $lightness-color;
-                    text-decoration: none;
-                    font-size: 18px;
-                }
-            }
-        }
-
-    }
+/* Dropdown arrow */
+.caret {
+  color: #808080;
 }
 
-.topnav {
-    overflow: hidden;
-    background-color: #333;
-
-
-    >a {
-        float: left;
-        display: block;
-        color: #f2f2f2;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-    }
-
-    >.icon {
-        display: none;
-    }
-
-    @media screen and (max-width: 600px) {
-        .topnav a:not(:first-child), .dropdown .dropbtn {
-          display: none;
-        }
-        .topnav a.icon {
-          float: right;
-          display: block;
-        }
-      }
-
+.caret:hover {
+  color: #404040;
 }
 
+.btn-outline-sdu {
+  border-color: $primary-color;
+  color: $primary-color;
+  background-color: transparent;
+}
 
-  
-  @media screen and (max-width: 600px) {
-    .topnav.responsive {position: relative;}
-    .topnav.responsive .icon {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .topnav.responsive a {
-      float: none;
-      display: block;
-      text-align: left;
-    }
-    .topnav.responsive .dropdown {float: none;}
-    .topnav.responsive .dropdown-content {position: relative;}
-    .topnav.responsive .dropdown .dropbtn {
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-  }
+.btn-outline-sdu:hover {
+  border-color: $primary-color;
+  color: $second-primary-color;
+  background-color: $primary-color;
+}
