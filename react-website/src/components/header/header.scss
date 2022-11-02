@@ -20,3 +20,43 @@
   color: $second-primary-color;
   background-color: $primary-color;
 }
+ 
+.navbar-nav{
+
+  .nav-item{
+    width: 15%;
+
+  >a {
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 10px 50px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+}}
+
+.navbar-toggler{
+  background-image: url(
+'https://media.geeksforgeeks.org/wp-content/uploads/20190314004249/sample-image2.png');
+            background-size: cover;
+}
+
+.navbar{
+  background-color: $primary-color;
+}
+
+.header-logo {
+  display: flex;
+  width: 200px;
+  height: 50px;
+  margin: auto 0;
+
+  >img {
+      padding: .1rem;
+      width: 50%;
+      background-color: $lightness-color;
+      border-radius: .5rem;
+  }
+}
