@@ -24,16 +24,19 @@
 .navbar-nav{
 
   .nav-item{
-    width: 15%;
+    width: 20%;
+    justify-content: right;
+    margin-left: 6%;
 
   >a {
+    width: 150px;
     float: right;
     display: block;
     color: #f2f2f2;
     text-align: center;
     padding: 10px 50px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 14px;
   }
 }}
 
@@ -49,7 +52,7 @@
 
 .header-logo {
   display: flex;
-  width: 200px;
+  width: 250px;
   height: 50px;
   margin: auto 0;
 
