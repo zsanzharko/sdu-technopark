@@ -20,18 +20,3 @@ export const menu = [
         link: '/faq'
     }
 ]
-
-export const admin_menu = [
-    {
-        title: 'Главная',
-        link: '/home'
-    },
-    {
-        title: 'Статистика',
-        link: '/statistics'
-    },
-    {
-        title: 'Посты',
-        link: '/posts'
-    }
-]
