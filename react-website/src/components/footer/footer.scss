@@ -1,0 +1,27 @@
+@import "../const/colors.scss";
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 2rem;
+
+    background-color: $second-primary-color;
+    
+    .social-networks{
+
+        >img {
+            padding: 0.7rem;
+            width: 70px;
+            height: 70px;
+        }
+    }
+
+    .copyrights{
+
+        > p{
+            font-size: 13px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    }
+}

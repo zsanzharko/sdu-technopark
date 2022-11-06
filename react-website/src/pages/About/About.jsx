@@ -4,6 +4,8 @@ import BannerHeader from '../../components/banner/Banner';
 import "./about.scss"
 import peopleImage from '../../assets/images/template-people/student-male.jpg';
 import softImage from '../../assets/images/software-image.jpg';
+import Footer from '../../components/footer/Footer';
+
 
 
 function About() {
@@ -319,6 +321,8 @@ function About() {
                     
                 </div>
             </div>
+
+            <Footer />
         </>
     );
 }
