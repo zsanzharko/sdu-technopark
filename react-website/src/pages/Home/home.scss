@@ -1,0 +1,138 @@
+@import "../../components/const/colors.scss";
+
+
+.thumbs.animated{
+    display: none;
+}
+
+.banner-header{
+    position: relative;
+    top: 64px;
+    background-image: url("../../assets/images/sss.png");
+
+}
+
+.content-wrapper{
+    background-image: url("../../assets/images/sss.png");
+
+}
+
+.large-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 64px;
+    // padding-top: 4rem;
+    background-image: url("../../assets/images/sss.png");
+
+}
+.first-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    background-image: url("../../assets/images/sss.png");
+}
+
+.second-container{
+    display: flex;
+    width: 757px;
+    height: 95px;
+    background-color: $second-color;
+    border-radius: 47.5px;
+    align-items: center;
+    justify-content: center;
+    .innerof-container{
+        display: flex;
+        width: 648px;
+        height: 100%;
+        border-radius: 66px;
+        background-color: $lightness-color;
+        align-items: center;
+        justify-content: center;
+        >h1{
+            font-family: 'Tahoma';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 64px;
+        }
+    }
+}
+
+
+.story-container{
+    width:451px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+   
+    color: $lightness-color;
+    
+
+    .heading-container{
+        padding: 20px;
+        width: 385px;
+        height: 462px;
+        >img{
+            width: 385px;
+            height: 462px;
+        }
+
+       
+    }
+
+    .content{
+        display: flex;
+        width: 451px;
+        height:339px;
+        align-items: center;
+        justify-content: center;
+
+        >p{
+            font-family: 'Tahoma';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 171.69%;
+            
+        }
+    }
+
+}
+
+.vision{
+    width: 100%;
+    padding-top: 100px;
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../../assets/images/sss.png");
+    .vision-content-1{
+        width: 50%;
+        height: 200px;
+        margin-right: auto;
+        background-color: $lightness-color;
+    }
+    .vision-content-2{
+        display: flex;
+        justify-content: center;
+        
+        align-items: center;
+        font-family: 'Tahoma';
+        font-style: normal;
+        font-weight: 700;
+        width: 50%;
+        height: 200px;
+        color: $lightness-color;
+    }
+    .vision-content-3{
+        width: 50%;
+        height: 200px;
+        margin-left: auto;
+        background-color: $lightness-color;
+    }
+
+}

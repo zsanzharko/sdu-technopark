@@ -3,23 +3,56 @@
     top: 0;
     width: 100%;
     min-height: 400px;
-    background-image: url("http://webmadewell.com/wp-content/uploads/2018/01/img-bg-sample-parallax-header.jpg");
+    // background-image: url("../../assets/images/BannerTechnoPark.jpg");
     background-position: center;
+    margin-top: 4rem;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.header-section {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    margin: auto;
-    max-width: 640px;
-    min-height: 400px;
-    color: white;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-    text-align: center;
-}
+// .header-section {
+//     position: relative;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     text-align: center;
+//     margin: auto;
+//     width: 100%;
+//     height: 798px;
+//     object-fit: fill;
+//     color: white;
+//     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+//     text-align: center;
+// }
   
+// .banner{
+//     width: 500px;
+//     height: 280px;
+//     margin: 0 auto;
+
+// }
+// .carusel{
+//     height: 1080px;
+//     top: 64px;
+//     // background-image: url("../../assets/images/sss.png");
+// }
+
+.banner{
+
+   
+    background-image: url("../../assets/images/sss.png");
+}
+
+// .carousel.carousel-slider{
+//     height: 85%;
+// }
+
+.thumbs.animated{
+    display: none;
+}
+
+.carusel-image{
+    >img{
+        
+    }
+}

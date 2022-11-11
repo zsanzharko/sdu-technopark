@@ -11,12 +11,9 @@ function Footer() {
     
         <div className='footer'>
             <div className='social-networks'>
-            <img src={facebook} alt="Logo TechnoPark" loading="lazy" />
-            <img src={linkedin} alt="Logo TechnoPark" loading="lazy" />
-            <img src={instagram} alt="Logo TechnoPark" loading="lazy" />
-
-
-
+                <img src={facebook} alt="Logo TechnoPark" loading="lazy" />
+                <img src={linkedin} alt="Logo TechnoPark" loading="lazy" />
+                <img src={instagram} alt="Logo TechnoPark" loading="lazy" />
             </div>
             <div className='copyrights'>
                 <p>© 2021 Copyright: SDU TechnoPark</p>

@@ -1,14 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
+import peopleImage from '../../assets/images/BannerTechnoPark.jpg';
+
 
 import "./banner.scss"
 
 function BannerHeader() {
+    
     return (
-        <div className="header">
-            <div className="header-section">
-                <h1>SDU TechnoPark</h1>
-                <h2>Background landcape scrolls with its own depth</h2>
-            </div>
+        <div className='banner'>
+        <Carousel className='carusel-banner'>
+                <div className='carusel-image'>
+                    <img src={peopleImage} />
+                    
+                </div>
+                <div className='carusel-image'>
+                    <img src={peopleImage} />
+                    
+                </div>
+                <div className='carusel-image'>
+                    <img src={peopleImage} />
+                    
+                </div>
+            </Carousel>
         </div>
     );
 }
