@@ -4,13 +4,10 @@ import { useState } from 'react';
 import "./banner.scss"
 
 const slides = [
-    {url: "http://webmadewell.com/wp-content/uploads/2018/01/img-bg-sample-parallax-header.jpg", title: "banner img"},
-    {url: "https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg", title: "banner img"},
-    {url: "https://live.staticflickr.com/65535/49221158846_b0b69a58f1.jpg", title: "banner img"}
+    {url: "https://avatars.mds.yandex.net/get-altay/5195020/2a000001819a0b7813cecc5c42f88529f233/XXL", title: "banner img"},
+    {url: "https://postgradoeconomia.com/wp-content/uploads/comunicacion-en-la-empresa.jpg", title: "banner img"},
+    {url: "https://elceo.com/wp-content/uploads/2019/06/coding.jpg", title: "banner img"}
 ]
-
-function radioBtnStyle() {
-}
 
 function BannerHeader() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -31,18 +28,31 @@ function BannerHeader() {
         setCurrentIndex(slideIndex);
     }
 
+    const changeOpacity = () => {
+        const arrows = document.querySelectorAll(".banner-button");
+        arrows.forEach(element => {
+            if(element.style.opacity == 1) element.style.opacity = 0;
+            else element.style.opacity = 1;
+        })
+    }
+
     return (
-        <div className="banner" style={{backgroundImage: `url(${slides[currentIndex].url})`}}>
+        <div className="banner" style={{backgroundImage: `url(${slides[currentIndex].url})`}} onMouseEnter={() => changeOpacity()} onMouseLeave={() => changeOpacity()}>
             <div className="banner-wrapper">
-                <button className="banner-button arrowLeft" onClick={goToPrevious}>@</button>
-                <button className="banner-button arrowRigth" onClick={goToNext}>@</button>
+                <button className="banner-button arrowLeft" onClick={goToPrevious}>❮</button>
+                <button className="banner-button arrowRigth" onClick={goToNext}>❯</button>
                 <ul className="banner-dots">
                     {slides.map((slide, slideIndex) => (
-                        <li key={slideIndex} className="banner-dot" onClick={() => goToSlide(slideIndex)} style={{backgroundColor:`${slideIndex == currentIndex ? "red" : "white"}`}}></li>
+                        <li key={slideIndex} className="banner-dot" onClick={() => goToSlide(slideIndex)} style={{backgroundColor:`${slideIndex == currentIndex ? "#9f2728" : "#ffffff"}`}}></li>
                     ))}
                 </ul>
-                <h1>SDU TechnoPark</h1>
-                <h2>Background landcape scrolls with its own depth</h2>
+                <h1 className="banner-h1">
+                    <span className="span-first">The</span><br />
+                    <span className="span-second">Progress</span><br />
+                    <span className="span-third">starts</span><br />
+                    <span className="span-fourth">here</span><br />
+                </h1>
+                <div className="banner-arrow"></div>
             </div>
         </div>
     );
