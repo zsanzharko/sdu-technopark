@@ -1,25 +1,62 @@
-.header {
-    left: 0;
-    top: 0;
+.banner {
+    position: relative;
     width: 100%;
-    min-height: 400px;
-    background-image: url("http://webmadewell.com/wp-content/uploads/2018/01/img-bg-sample-parallax-header.jpg");
+    min-height: 772px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    transition: all 0.5s ease-in-out;
 }
 
-.header-section {
+.banner-wrapper {
     position: relative;
+    z-index: 1;
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
     justify-content: center;
-    text-align: center;
+    align-items: center;
     margin: auto;
-    max-width: 640px;
-    min-height: 400px;
+    max-width: inherit;
+    min-height: inherit;
     color: white;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-    text-align: center;
+    font-size: 40px;
 }
-  
+
+.banner-button {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    opacity: 1;
+    transition: all 0.5s;
+    &.arrowLeft {
+        left: 50px;
+    }
+    &.arrowRigth {
+        right: 50px;
+    }
+}
+
+.banner-dots {
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 33px;
+    list-style-type: none;
+}
+
+.banner-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: aliceblue;
+    cursor: pointer;
+}
