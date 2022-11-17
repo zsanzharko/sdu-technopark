@@ -83,7 +83,7 @@
     }
 }
 
-.banner-dots {
+.banner-dots-container {
     position: absolute;
     bottom: 46px;
     display: flex;
@@ -120,7 +120,7 @@
     top: 0;
     left: 0;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     flex-flow: row nowrap;
     min-height: 100%;
     transition: all 0.5s ease-in-out;
