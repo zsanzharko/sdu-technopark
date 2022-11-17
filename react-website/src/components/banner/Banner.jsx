@@ -2,7 +2,6 @@ import React from 'react';
 import { useState } from 'react';
 
 import "./banner.scss"
-import wheelImg from "../../assets/images/wheel.svg";
 
 const slides = [
     {url: "https://avatars.mds.yandex.net/get-altay/5195020/2a000001819a0b7813cecc5c42f88529f233/XXL", title: "banner img"},
@@ -62,12 +61,6 @@ function BannerHeader() {
                         <li key={slideIndex} className="banner-dot" onClick={() => goToSlide(slideIndex)} style={{backgroundColor:`${slideIndex == currentIndex ? "#9f2728" : "#ffffff"}`}}></li>
                     ))}
                 </ul>
-                <div className="banner-animation">
-                    <div className="banner-wheel">
-                        <img className="banner-img" src={wheelImg} alt="wheel" />
-                        <button className="banner-arrow arrowDown">❮</button>
-                    </div>
-                </div>
             </div>
             <div className="banner-slides">
                 <div className="banner-slide" style={{backgroundImage: `url(${slides[0].url}`}}>

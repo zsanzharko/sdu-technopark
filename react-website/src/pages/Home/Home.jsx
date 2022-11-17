@@ -8,6 +8,8 @@ import image from '../../assets/images/history-icon-512.png'
 
 import testImage from '../../assets/images/software-image.jpg'
 
+import wheelImg from "../../assets/images/wheel.svg";
+
 const Home = () => {
 
     var testImage = ` background-image: url(${testImage});`
@@ -17,6 +19,13 @@ const Home = () => {
             <Header />
 
             <BannerHeader />
+
+            <div className="banner-animation">
+                <div className="banner-wheel">
+                    <img className="banner-img" src={wheelImg} alt="wheel" />
+                    <button className="banner-arrow arrowDown">❮</button>
+                </div>
+            </div>
 
             <div className={'fact_place'}>
                 <div className={'fact_inner'}>
