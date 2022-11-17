@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 
 import "./banner.scss"
+import wheelImg from "../../assets/images/wheel.svg";
 
 const slides = [
     {url: "https://avatars.mds.yandex.net/get-altay/5195020/2a000001819a0b7813cecc5c42f88529f233/XXL", title: "banner img"},
@@ -38,8 +39,21 @@ function BannerHeader() {
         })
     }
 
+    const wheelAnimation = () => {
+        const wheel = document.querySelector(".banner-img");
+        const arrow = document.querySelector(".arrowDown");
+
+        if(wheel.classList.contains("animation")) {
+            wheel.classList.remove("animation");
+            arrow.classList.remove("animation");
+        } else {
+            wheel.classList.add("animation");
+            arrow.classList.add("animation");
+        }
+    }
+
     return (
-        <div className="banner" onMouseEnter={() => changeOpacity()} onMouseLeave={() => changeOpacity()}>
+        <div className="banner" onMouseEnter={() => {changeOpacity(); wheelAnimation()}} onMouseLeave={() => {changeOpacity(); wheelAnimation()}}>
             <div className="banner-wrapper">
                 <button className="banner-button arrowLeft" onClick={goToPrevious}>❮</button>
                 <button className="banner-button arrowRigth" onClick={goToNext}>❯</button>
@@ -48,19 +62,25 @@ function BannerHeader() {
                         <li key={slideIndex} className="banner-dot" onClick={() => goToSlide(slideIndex)} style={{backgroundColor:`${slideIndex == currentIndex ? "#9f2728" : "#ffffff"}`}}></li>
                     ))}
                 </ul>
+                <div className="banner-animation">
+                    <div className="banner-wheel">
+                        <img className="banner-img" src={wheelImg} alt="wheel" />
+                        <button className="banner-arrow arrowDown">❮</button>
+                    </div>
+                </div>
             </div>
             <div className="banner-slides">
-            <div className="banner-slide" style={{backgroundImage: `url(${slides[0].url}`}}>
-                <h1 className="banner-h1">
-                    <span className="span-first">The</span><br />
-                    <span className="span-second">Progress</span><br />
-                    <span className="span-third">starts</span><br />
-                    <span className="span-fourth">here</span><br />
-                </h1>
-                <div className="banner-arrow"></div>
-            </div>
-            <div className="banner-slide" style={{backgroundImage: `url(${slides[1].url}`}}></div>
-            <div className="banner-slide" style={{backgroundImage: `url(${slides[2].url}`}}></div>
+                <div className="banner-slide" style={{backgroundImage: `url(${slides[0].url}`}}>
+                    <h1 className="banner-h1">
+                        <span className="span-first">The</span><br />
+                        <span className="span-second">Progress</span><br />
+                        <span className="span-third">starts</span><br />
+                        <span className="span-fourth">here</span><br />
+                    </h1>
+                <div className="banner-arrow blueArrow"></div>
+                </div>
+                <div className="banner-slide" style={{backgroundImage: `url(${slides[1].url}`}}></div>
+                <div className="banner-slide" style={{backgroundImage: `url(${slides[2].url}`}}></div>
             </div>
         </div>
     );
