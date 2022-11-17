@@ -1,7 +1,7 @@
 package kz.sdu.edu.sdutechnopark.user;
 
-import kz.sdu.edu.sdutechnopark.exceptions.serverLogicException.ServerLogicException;
-import kz.sdu.edu.sdutechnopark.exceptions.userException.InvalidInputException;
+import kz.sdu.edu.sdutechnopark.exceptions.serverlogicexception.ServerLogicException;
+import kz.sdu.edu.sdutechnopark.exceptions.userexception.InvalidInputException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

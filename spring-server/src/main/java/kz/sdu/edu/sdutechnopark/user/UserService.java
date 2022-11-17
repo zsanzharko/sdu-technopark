@@ -1,6 +1,6 @@
 package kz.sdu.edu.sdutechnopark.user;
 
-import kz.sdu.edu.sdutechnopark.exceptions.userException.InvalidInputException;
+import kz.sdu.edu.sdutechnopark.exceptions.userexception.InvalidInputException;
 
 import java.util.List;
 
