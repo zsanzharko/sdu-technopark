@@ -16,12 +16,14 @@ function BannerHeader() {
         const isFirstSlide = currentIndex === 0;
         const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
         setCurrentIndex(newIndex);
+        document.querySelector(".banner-slides").style.left = `${-100 * newIndex}vw`;    
     }
     
     const goToNext = () => {
         const isLastSlide = currentIndex === slides.length - 1;
         const newIndex = isLastSlide ? 0 : currentIndex + 1;
         setCurrentIndex(newIndex);
+        document.querySelector(".banner-slides").style.left = `${-100 * newIndex}vw`;
     }
 
     const goToSlide = slideIndex => {
@@ -37,7 +39,7 @@ function BannerHeader() {
     }
 
     return (
-        <div className="banner" style={{backgroundImage: `url(${slides[currentIndex].url})`}} onMouseEnter={() => changeOpacity()} onMouseLeave={() => changeOpacity()}>
+        <div className="banner" onMouseEnter={() => changeOpacity()} onMouseLeave={() => changeOpacity()}>
             <div className="banner-wrapper">
                 <button className="banner-button arrowLeft" onClick={goToPrevious}>❮</button>
                 <button className="banner-button arrowRigth" onClick={goToNext}>❯</button>
@@ -46,6 +48,9 @@ function BannerHeader() {
                         <li key={slideIndex} className="banner-dot" onClick={() => goToSlide(slideIndex)} style={{backgroundColor:`${slideIndex == currentIndex ? "#9f2728" : "#ffffff"}`}}></li>
                     ))}
                 </ul>
+            </div>
+            <div className="banner-slides">
+            <div className="banner-slide" style={{backgroundImage: `url(${slides[0].url}`}}>
                 <h1 className="banner-h1">
                     <span className="span-first">The</span><br />
                     <span className="span-second">Progress</span><br />
@@ -53,6 +58,9 @@ function BannerHeader() {
                     <span className="span-fourth">here</span><br />
                 </h1>
                 <div className="banner-arrow"></div>
+            </div>
+            <div className="banner-slide" style={{backgroundImage: `url(${slides[1].url}`}}></div>
+            <div className="banner-slide" style={{backgroundImage: `url(${slides[2].url}`}}></div>
             </div>
         </div>
     );
