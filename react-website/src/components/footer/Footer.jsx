@@ -11,7 +11,13 @@ import envelope from '../../assets/images/link-icons/envelope-icon/Envelope.svg'
 
 
 
-function Footer(props) {
+function Footer() {
+    const number = '+7 (727) 307 95 65'
+    const name = 'Нужна помощь? Свяжитесь с нами:'
+    const link = 'www.technopark.sdu.edu.kz'
+    const email = 'technopark@sdu.edu.kz'
+
+
     return ( <>
     
         <div className='footer'>
@@ -29,17 +35,17 @@ function Footer(props) {
             
             <div className='copyrights'>
                 <div className='need-help'>
-                    <h1>{props.text}</h1>
-                    <h1>{props.number}</h1>
+                    <h1>{name}</h1>
+                    <a href="tel: {number}">{number}</a>
                 </div>
                 <div className='uni-contacts'>
                     <div className='contact'>
                         <img src={earth} alt="website" loading="lazy" />
-                        <p>{props.link}</p>
+                        <p>{link}</p>
                     </div>
                     <div className='contact'>
                         <img src={envelope} alt="website" loading="lazy" />
-                        <p>{props.email}</p>
+                        <p>{email}</p>
                     </div>
                 </div>
             </div>
