@@ -5,8 +5,10 @@ import Footer from '../../components/footer/Footer';
 import "./home.scss"
 import people  from '../../assets/images/sdu-people.png';
 
-
 const Home = () => {
+
+    var testImage = ` background-image: url(${testImage});`
+
     return (
         <>
             <Header />
@@ -61,7 +63,6 @@ const Home = () => {
                     <h1>ВИДЕНИЕ И ВОЗМОЖНОСТИ</h1>
                 </div>
                 <div className='vision-content-3'>
-
                 </div>
             </div>
 
