@@ -16,8 +16,8 @@
     }
     .technopark-logo{
         >img{
-            max-width: 200px;
-            max-height: 92px;
+            width: 200px;
+            height: 92px;
         }
     }
     
@@ -43,6 +43,9 @@
         flex-direction: column;
         color:#072A6D;
         .need-help{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
             > h1{
                 font-family: 'Roboto';
                 
@@ -60,15 +63,13 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            justify-content: center;
+            justify-content: space-evenly;
             
             .contact{
                 display: flex;
                 flex-direction: row;
-                width: 40%;
-                align-items: center;
-
                 
+                align-items: center;
                 
                 >p{
                     font-family: 'Roboto';
@@ -87,13 +88,51 @@
     }
 }
 
-@media screen and (max-width: 1680px) {
-    .contact{
+@media all and (max-width: 1723px) {
+    .footer{
+        .logos-banner{
+            .technopark-logo{
+                >img{
+                    object-fit: cover;
+                    max-width: 150px;
+                    max-height: 65px;
+                }
+            }
+            .social-networks{
+                >img{
+                    width: 33px;
+                    height: 30px;
+                }
+                .instagram{
+                    width: 48px;
+                    height: 43px;
+                }
+            }
+        }
+        .copyrights{
+            .need-help{
+                display: flex;
+                flex-direction: column;
+                >h1{
+                    font-size: x-large;
+                }
+            }
+            .uni-contacts{
+                display: flex;
+                flex-direction: column;
+                .contact{
+                    >p{
+                        font-size: x-large;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1000px) {
+    .footer{
         display: flex;
         flex-direction: column;
-    }
-
-    .logos-banner{
-        display: none;
     }
 }

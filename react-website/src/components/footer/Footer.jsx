@@ -1,7 +1,6 @@
 import React from 'react';
 
 import './footer.scss'
-import info from './words.js'
 import facebook from '../../assets/images/link-icons/facebook-icon/facebook.png';
 import sdulogo from '../../assets/images/sdu_technopark_logo.png'
 import linkedin from '../../assets/images/link-icons/linkedin-icon/linkedin.png';
@@ -30,7 +29,8 @@ function Footer(props) {
             
             <div className='copyrights'>
                 <div className='need-help'>
-                    <h1>{props.text}{props.number}</h1>
+                    <h1>{props.text}</h1>
+                    <h1>{props.number}</h1>
                 </div>
                 <div className='uni-contacts'>
                     <div className='contact'>
