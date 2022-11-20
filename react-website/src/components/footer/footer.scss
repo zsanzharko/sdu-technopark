@@ -16,8 +16,8 @@
     }
     .technopark-logo{
         >img{
-            width: 200px;
-            height: 92px;
+            max-width: 200px;
+            max-height: 92px;
         }
     }
     
@@ -67,6 +67,8 @@
                 flex-direction: row;
                 width: 40%;
                 align-items: center;
+
+                
                 
                 >p{
                     font-family: 'Roboto';
@@ -82,5 +84,16 @@
         }
 
         
+    }
+}
+
+@media screen and (max-width: 1680px) {
+    .contact{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logos-banner{
+        display: none;
     }
 }

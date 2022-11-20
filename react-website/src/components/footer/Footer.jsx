@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './footer.scss'
+import info from './words.js'
 import facebook from '../../assets/images/link-icons/facebook-icon/facebook.png';
 import sdulogo from '../../assets/images/sdu_technopark_logo.png'
 import linkedin from '../../assets/images/link-icons/linkedin-icon/linkedin.png';
@@ -11,7 +12,7 @@ import envelope from '../../assets/images/link-icons/envelope-icon/Envelope.svg'
 
 
 
-function Footer() {
+function Footer(props) {
     return ( <>
     
         <div className='footer'>
@@ -29,16 +30,16 @@ function Footer() {
             
             <div className='copyrights'>
                 <div className='need-help'>
-                    <h1>Нужна помощь? Свяжитесь с нами: +7 (727) 307 95 65</h1>
+                    <h1>{props.text}{props.number}</h1>
                 </div>
                 <div className='uni-contacts'>
                     <div className='contact'>
                         <img src={earth} alt="website" loading="lazy" />
-                        <p>www.techopark.sdu.edu.kz</p>
+                        <p>{props.link}</p>
                     </div>
                     <div className='contact'>
                         <img src={envelope} alt="website" loading="lazy" />
-                        <p>technopark@sdu.edu.kz</p>
+                        <p>{props.email}</p>
                     </div>
                 </div>
             </div>
