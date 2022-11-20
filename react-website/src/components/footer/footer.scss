@@ -1,0 +1,149 @@
+@import "../const/colors.scss";
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5rem 130px;
+    width: 100%;
+
+    background-color: $lightness-color;
+    .logos-banner{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 13%;
+    }
+    .technopark-logo{
+        >img{
+            width: 200px;
+            height: 92px;
+        }
+    }
+    
+    .social-networks{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .instagram{
+            width: 72px;
+            height: 65px;
+        }
+
+        >img {
+            
+            width: 49px;
+            height: 45px;
+        }
+    }
+
+    .copyrights{
+        width:87%;
+        display: flex;
+        flex-direction: column;
+        color:#072A6D;
+        .need-help{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            > h1{
+                font-family: 'Roboto';
+                
+                font-weight: normal;
+                font-size: 48px;
+                line-height: 171.69%;
+                /* or 86px */
+
+                text-align: center;
+                color: #072A6D;
+
+            }
+            >a{
+                font-family: 'Roboto';
+                text-decoration: none;
+                font-weight: normal;
+                font-size: 48px;
+                line-height: 171.69%;
+                /* or 86px */
+
+                text-align: center;
+                color: #072A6D;
+            }
+        }
+        .uni-contacts{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            
+            .contact{
+                display: flex;
+                flex-direction: row;
+                
+                align-items: center;
+                
+                >p{
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 35px;
+                    line-height: 171.69%;
+                    /* or 60px */
+
+                    text-align: center;
+                }
+            }
+        }
+
+        
+    }
+}
+
+@media all and (max-width: 1723px) {
+    .footer{
+        .logos-banner{
+            .technopark-logo{
+                >img{
+                    object-fit: cover;
+                    max-width: 150px;
+                    max-height: 65px;
+                }
+            }
+            .social-networks{
+                >img{
+                    width: 33px;
+                    height: 30px;
+                }
+                .instagram{
+                    width: 48px;
+                    height: 43px;
+                }
+            }
+        }
+        .copyrights{
+            .need-help{
+                display: flex;
+                flex-direction: column;
+                >h1{
+                    font-size: x-large;
+                }
+            }
+            .uni-contacts{
+                display: flex;
+                flex-direction: column;
+                .contact{
+                    >p{
+                        font-size: x-large;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1000px) {
+    .footer{
+        display: flex;
+        flex-direction: column;
+    }
+}
