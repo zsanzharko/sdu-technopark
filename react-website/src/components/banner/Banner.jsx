@@ -37,31 +37,28 @@ function BannerHeader() {
         })
     }
 
-    const wheelAnimation = () => {
+    const arrowAnimation = () => {
         const arrows = document.querySelectorAll(".banner-button");
-        const wheel = document.querySelector(".banner-img");
-        const arrow = document.querySelector(".arrowDown");
 
         arrows.forEach(element => {
             if(element.style.opacity === "1") element.style.opacity = 0;
             else element.style.opacity = 1;
         })
+    }
 
-        if(wheel.classList.contains("animation")) {
-            setTimeout(() => {
-                wheel.classList.remove("animation");
-            }, 1000);
-            setTimeout(() => {
-                arrow.classList.remove("animation");
-            }, 1000);
-        } else {
+    window.addEventListener("scroll", () => {
+        const wheelContainer = document.querySelector(".banner-animation");
+        const wheel = document.querySelector(".banner-img");
+        const arrow = document.querySelector(".arrowDown");
+
+        if(wheelContainer.getBoundingClientRect().top <= (document.documentElement.clientHeight / 2)) {
             wheel.classList.add("animation");
             arrow.classList.add("animation");
         }
-    }
+    })
 
     return (
-        <div className="banner" onMouseEnter={wheelAnimation} onMouseLeave={wheelAnimation}>
+        <div className="banner" onMouseEnter={arrowAnimation} onMouseLeave={arrowAnimation}>
             <div className="banner-wrapper">
                 <button className="banner-button arrowLeft" onClick={goToPrevious}>❮</button>
                 <button className="banner-button arrowRigth" onClick={goToNext}>❯</button>

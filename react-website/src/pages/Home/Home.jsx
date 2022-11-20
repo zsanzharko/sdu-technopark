@@ -1,13 +1,25 @@
 import React from 'react';
 import BannerHeader from '../../components/banner/Banner';
 import Header from '../../components/header/Header';
+<<<<<<< HEAD
 import Footer from '../../components/footer/Footer';
 import "./home.scss"
 import people  from '../../assets/images/sdu-people.png';
+=======
+import functionality from "./information";
+
+// styles
+import './home.scss';
+
+import wheelImg from "../../assets/images/wheel.svg";
+import chessImg from "../../assets/images/ChessPiece.png";
+import bulbImg from "../../assets/images/LightBulb.png";
+import historyIcon from "../../assets/images/List_Icon.svg";
+import eyeIcon from "../../assets/images/Eye_Scaner_Icon.svg";
+import personIcon from "../../assets/images/Opportunities_Icon.svg";
+>>>>>>> 73e46e7 (add second section)
 
 const Home = () => {
-
-    var testImage = ` background-image: url(${testImage});`
 
     return (
         <>
@@ -16,6 +28,7 @@ const Home = () => {
                 <BannerHeader />
             </div>
 
+<<<<<<< HEAD
             
 
             <div className='large-container'>
@@ -63,6 +76,79 @@ const Home = () => {
                     <h1>ВИДЕНИЕ И ВОЗМОЖНОСТИ</h1>
                 </div>
                 <div className='vision-content-3'>
+=======
+            <section className="information-section">
+                <img className="information-image chess" src={chessImg} alt="chessImg" />
+                <img className="information-image bulb" src={bulbImg} alt="bulbImg" />
+                <div className="information-wrapper">
+                    <article className="info-slide">
+                        <h2 className="slide-heading">heading</h2>
+                        <img className="slide-icon" src={historyIcon} alt="history icon" />
+                        <div className="slide-text-container">
+                            <p className="slide-text">
+                                это наша крутая история не могу она такая крутая еееееееее, но еще есть продолжение оно еще круче погнали это наша крутая история не могу она такая крутая еееееееее, но еще есть продолжение оно еще круче погнали это наша крутая история не могу она такая крутая еееееееее, но еще есть продолжение оно еще круче погнали это наша крутая история 
+                            </p>
+                        </div>
+                    </article>
+                    <article className="info-slide">
+                        <h2 className="slide-heading">heading</h2>
+                        <img className="slide-icon" src={eyeIcon} alt="history icon" />
+                        <div className="slide-text-container">
+                            <p className="slide-text">
+                                это наша крутая история не могу она такая крутая еееееееее, но еще есть продолжение оно еще круче погнали это наша крутая история не могу она такая крутая еееееееее, но еще есть продолжение оно еще круче погнали это наша крутая история не могу она такая крутая еееееееее, но еще есть продолжение оно еще круче погнали это наша крутая история 
+                            </p>
+                        </div>
+                    </article>
+                    <article className="info-slide">
+                        <h2 className="slide-heading">возможности</h2>
+                        <img className="slide-icon" src={personIcon} alt="history icon" />
+                        <div className="slide-text-container">
+                            <p className="slide-text">
+                                это наша крутая история не могу она такая крутая еееееееее, но еще есть продолжение оно еще круче погнали это наша крутая история не могу она такая крутая еееееееее, но еще есть продолжение оно еще круче погнали это наша крутая история не могу она такая крутая еееееееее, но еще есть продолжение оно еще круче погнали это наша крутая история 
+                            </p>
+                        </div>
+                    </article>
+                </div>
+                <div className="banner-wheel second-animation">
+                    <img className="banner-img second-wheel" src={wheelImg} alt="wheel" />
+                </div>
+
+                <section className="direction-section">
+                    <span className="direction-line first"></span>
+                    <span className="direction-line second"></span>
+                    <span className="direction-line third"></span>
+                </section>
+            </section>
+
+            <div className='direction_place'>
+                <div className="direction_place_inner">
+                    <div className="direction_place_split">
+                        <h1 className="direction_main_title">
+                            Наши направления и предложения
+                        </h1>
+                    </div>
+                    <div className="direction_place_split">
+                        <div className="direction_info">
+                            <div className="flex-info">
+                                <div className="direction_image_info">
+                                    <div className="direction_image_info_inner">
+                                        <h2>Text</h2>
+                                    </div>
+                                </div>
+                                <div className="direction_image_info">
+                                    <div className="direction_image_info_inner">
+                                        <h2>Text</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="direction_image_info">
+                                <div className="direction_image_info_inner">
+                                    <h2>Text</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+>>>>>>> 73e46e7 (add second section)
                 </div>
             </div>
 
