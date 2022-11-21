@@ -1,9 +1,5 @@
 export const menu = [
     {
-        title: 'О нас',
-        link: '/about'
-    },
-    {
         title: 'Актуальное',
         link: '/actual'
     },
@@ -12,13 +8,13 @@ export const menu = [
         link: '/cooperation'
     },
     {
+        title: 'О нас',
+        link: '/about'
+    },
+    {
         title: 'Контакты',
         link: '/contact'
     },
-    {
-        title: 'ЧаВо',
-        link: '/faq'
-    }
 ]
 
 export const admin_menu = [
