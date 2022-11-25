@@ -1,4 +1,4 @@
-import React, {useRef, useEffect} from 'react';
+import React from 'react';
 import BannerHeader from '../../components/banner/Banner';
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
@@ -53,26 +53,7 @@ const Home = () => {
     const scrollRight = () => {
         let num = document.querySelector(".partner-logo").clientWidth + 218 * document.documentElement.clientWidth / 1920;
         document.querySelector(".partners-slides").scrollLeft -= num;
-    }
-
-    const canvasRef = useRef(null);
-    
-    useEffect(() => {
-        const canvas = canvasRef.current;
-        const context = canvas.getContext("2d");
-
-        context.beginPath();
-        context.moveTo(1, 60);
-        context.lineTo(60, 40);
-        context.lineTo(120, 70);
-        context.lineTo(145, 60);
-        context.lineTo(200, 70);
-        context.lineTo(230, 40);
-        context.lineTo(280, 70);
-        context.strokeStyle = "#ffffff";
-        context.lineWidth = 2;
-        context.stroke();
-    })   
+    }  
 
     return (
         <>
@@ -159,9 +140,6 @@ const Home = () => {
             </section>
 
             <section className="connections-section">
-                <div className="connection-lines">
-                    <canvas className="connection-canvas" ref={canvasRef}></canvas>
-                </div>
                 <div className="connection connection-student">
                     <div className="circle-connection">
                         <img src={studentIcon} alt="student icon" />
