@@ -1,159 +1,207 @@
-import React from 'react';
+import React, {useRef, useEffect} from 'react';
 import BannerHeader from '../../components/banner/Banner';
 import Header from '../../components/header/Header';
-<<<<<<< HEAD
 import Footer from '../../components/footer/Footer';
-import "./home.scss"
-import people  from '../../assets/images/sdu-people.png';
-=======
-import functionality from "./information";
+import "./information";
 
 // styles
 import './home.scss';
 
-import wheelImg from "../../assets/images/wheel.svg";
+import outsideWheel from "../../assets/images/TechnoParkGearLogoOutside.svg";
+import insideWheel from "../../assets/images/TechnoParkGearLogoInside.svg";
+import mainImg from "../../assets/images/electronics.jpg";
 import chessImg from "../../assets/images/ChessPiece.png";
 import bulbImg from "../../assets/images/LightBulb.png";
 import historyIcon from "../../assets/images/List_Icon.svg";
 import eyeIcon from "../../assets/images/Eye_Scaner_Icon.svg";
 import personIcon from "../../assets/images/Opportunities_Icon.svg";
->>>>>>> 73e46e7 (add second section)
+import hardware from "../../assets/images/hardware.png";
+import software from "../../assets/images/software.png";
+import enterpreneurship from "../../assets/images/enterpreneurship.png";
+import studentIcon from "../../assets/images/student.png";
+import mentorImg from "../../assets/images/mentor.png";
+import partnerImg from "../../assets/images/partner.png";
+import investorImg from "../../assets/images/investor.png";
+import technoparkLogo from "../../assets/images/sdu_technopark_logo.png";
+
+
+const text = {
+    history: "история",
+    slideText: "это наша крутая история не могу она такая крутая еееееееее, но еще есть продолжение оно еще круче погнали это наша крутая история не могу она такая крутая еееееееее, но еще есть продолжение оно еще круче погнали это наша крутая история не могу она такая крутая еееееееее, но еще есть продолжение оно еще круче погнали это наша крутая история",
+    vision: "видение",
+    opportunities: "возможности",
+    hardware: "hardware",
+    software: "software",
+    enterpreneurship: "enterpreneurship",
+    student: "студент",
+    partnership: "партнерство",
+    investor: "инвестор",
+    mentorship: "менторство",
+}
+
+const partners = [
+    technoparkLogo, technoparkLogo, technoparkLogo, technoparkLogo, technoparkLogo, technoparkLogo
+]
 
 const Home = () => {
+
+    const scrollLeft = () => {
+        let num = document.querySelector(".partner-logo").clientWidth + 218 * document.documentElement.clientWidth / 1920;
+        document.querySelector(".partners-slides").scrollLeft += num;
+    }
+      
+    const scrollRight = () => {
+        let num = document.querySelector(".partner-logo").clientWidth + 218 * document.documentElement.clientWidth / 1920;
+        document.querySelector(".partners-slides").scrollLeft -= num;
+    }
+
+    const canvasRef = useRef(null);
+    
+    useEffect(() => {
+        const canvas = canvasRef.current;
+        const context = canvas.getContext("2d");
+
+        context.beginPath();
+        context.moveTo(1, 60);
+        context.lineTo(60, 40);
+        context.lineTo(120, 70);
+        context.lineTo(145, 60);
+        context.lineTo(200, 70);
+        context.lineTo(230, 40);
+        context.lineTo(280, 70);
+        context.strokeStyle = "#ffffff";
+        context.lineWidth = 2;
+        context.stroke();
+    })   
 
     return (
         <>
             <Header />
-            <div className='banner-header'>
-                <BannerHeader />
-            </div>
 
-<<<<<<< HEAD
-            
-
-            <div className='large-container'>
-                <div className='second-container'>
-                    <div className='innerof-container'>
-                        <h1>Наша история</h1>
-                    </div>
+            <BannerHeader>
+                <div className="banner-slide" style={{background: `url(${mainImg}), #474747`, backgroundBlendMode: "overlay"}}>
+                    <h1 className="banner-h1">
+                        <span className="span-first">The</span><br />
+                        <span className="span-second">Progress</span><br />
+                        <span className="span-third">starts</span><br />
+                        <span className="span-fourth">here</span><br />
+                    </h1>
+                <div className="banner-arrow blueArrow"></div>
                 </div>
-            <div className='first-container'>
-                <div className='story-container'>
-                    
-                        <div className='heading-container' >
-                            <img src={people} alt="" />
-                        </div>
-                        <div className='content'>
-                            <p>Во всех учебниках пишут, что история – это наука о прошлом. История – это записи о том, что происходило в мире, в нашей стране или в нашем родном городе много лет назад.</p>
-                        </div>
+                <div className="banner-slide" style={{backgroundImage: "url(https://postgradoeconomia.com/wp-content/uploads/comunicacion-en-la-empresa.jpg)"}}></div>
+                <div className="banner-slide" style={{backgroundImage: "url(https://elceo.com/wp-content/uploads/2019/06/coding.jpg)"}}></div>
+            </BannerHeader>
 
-                </div>
-
-                <div className='story-container'>
-                    <div className='heading-container '>
-                        <img src={people} alt="" />
-                    </div>
-                    <div className='content'>
-                        <p> Даже то, что происходит с нами сейчас, когда-то станет историей и попадет в школьные учебники.
-                            Знать историю своего народа также важно, как и разбираться в том, что происходило во всем мире давным-давно.</p>
-                    </div>
-                </div>
-                <div className='story-container'>
-                    <div className='heading-container '>
-                        <img src={people} alt="" />
-                    </div>
-                    <div className='content'>
-                        <p>История учит нас положительным и отрицательным примерам. Мы можем сделать выводы на ошибках прошлого и больше их не совершать. </p>
+            <div className="banner-animation">
+                <div className="banner-wheel">
+                    <div className="banner-img-container">
+                        <img className="banner-img outside-wheel" src={outsideWheel} alt="wheel" />
+                        <img className="banner-img inside-wheel" src={insideWheel} alt="wheel" />
+                        <button className="banner-arrow arrowDown">❮</button>
                     </div>
                 </div>
             </div>
-            </div>
-            <div className='vision'>
-                <div className='vision-content-1'>
 
-                </div>
-                <div className='vision-content-2'>
-                    <h1>ВИДЕНИЕ И ВОЗМОЖНОСТИ</h1>
-                </div>
-                <div className='vision-content-3'>
-=======
             <section className="information-section">
-                <img className="information-image chess" src={chessImg} alt="chessImg" />
-                <img className="information-image bulb" src={bulbImg} alt="bulbImg" />
                 <div className="information-wrapper">
+                    <img className="information-image chess" src={chessImg} alt="chessImg" />
+                    <img className="information-image bulb" src={bulbImg} alt="bulbImg" />
                     <article className="info-slide">
-                        <h2 className="slide-heading">heading</h2>
+                        <h2 className="slide-heading">{text.history}</h2>
                         <img className="slide-icon" src={historyIcon} alt="history icon" />
                         <div className="slide-text-container">
-                            <p className="slide-text">
-                                это наша крутая история не могу она такая крутая еееееееее, но еще есть продолжение оно еще круче погнали это наша крутая история не могу она такая крутая еееееееее, но еще есть продолжение оно еще круче погнали это наша крутая история не могу она такая крутая еееееееее, но еще есть продолжение оно еще круче погнали это наша крутая история 
-                            </p>
+                            <p className="slide-text">{text.slideText}</p>
                         </div>
                     </article>
                     <article className="info-slide">
-                        <h2 className="slide-heading">heading</h2>
+                        <h2 className="slide-heading">{text.vision}</h2>
                         <img className="slide-icon" src={eyeIcon} alt="history icon" />
                         <div className="slide-text-container">
-                            <p className="slide-text">
-                                это наша крутая история не могу она такая крутая еееееееее, но еще есть продолжение оно еще круче погнали это наша крутая история не могу она такая крутая еееееееее, но еще есть продолжение оно еще круче погнали это наша крутая история не могу она такая крутая еееееееее, но еще есть продолжение оно еще круче погнали это наша крутая история 
-                            </p>
+                            <p className="slide-text">{text.slideText}</p>
                         </div>
                     </article>
                     <article className="info-slide">
-                        <h2 className="slide-heading">возможности</h2>
+                        <h2 className="slide-heading">{text.opportunities}</h2>
                         <img className="slide-icon" src={personIcon} alt="history icon" />
                         <div className="slide-text-container">
-                            <p className="slide-text">
-                                это наша крутая история не могу она такая крутая еееееееее, но еще есть продолжение оно еще круче погнали это наша крутая история не могу она такая крутая еееееееее, но еще есть продолжение оно еще круче погнали это наша крутая история не могу она такая крутая еееееееее, но еще есть продолжение оно еще круче погнали это наша крутая история 
-                            </p>
+                            <p className="slide-text">{text.slideText}</p>
                         </div>
                     </article>
                 </div>
                 <div className="banner-wheel second-animation">
-                    <img className="banner-img second-wheel" src={wheelImg} alt="wheel" />
+                    <div className="banner-img-container">
+                        <img className="banner-img second-outside-wheel" src={outsideWheel} alt="wheel" />
+                        <img className="banner-img second-inside-wheel" src={insideWheel} alt="wheel" />
+                    </div>
                 </div>
 
                 <section className="direction-section">
-                    <span className="direction-line first"></span>
-                    <span className="direction-line second"></span>
-                    <span className="direction-line third"></span>
+                    <div className="circle"></div>
+                    <div className="direction-block first">
+                        <div className="firstBlock">
+                            <img className="block-img firstBlock-img" src={hardware} alt="hardware" />
+                            <h2 className="block-title firstBlock-title">{text.hardware}</h2>
+                        </div>
+                    </div>
+                    <div className="direction-block second">
+                        <div className="secondBlock">
+                            <img className="block-img secondBlock-img" src={software} alt="software" />
+                            <h2 className="block-title secondBlock-title">{text.software}</h2>
+                        </div>
+                    </div>
+                    <div className="direction-block third">
+                        <div className="thirdBlock">
+                            <img className="block-img thirdBlock-img" src={enterpreneurship} alt="enterpreneurship" />
+                            <h2 className="block-title thirdBlock-title">{text.enterpreneurship}</h2>
+                        </div>
+                    </div>
                 </section>
             </section>
 
-            <div className='direction_place'>
-                <div className="direction_place_inner">
-                    <div className="direction_place_split">
-                        <h1 className="direction_main_title">
-                            Наши направления и предложения
-                        </h1>
-                    </div>
-                    <div className="direction_place_split">
-                        <div className="direction_info">
-                            <div className="flex-info">
-                                <div className="direction_image_info">
-                                    <div className="direction_image_info_inner">
-                                        <h2>Text</h2>
-                                    </div>
-                                </div>
-                                <div className="direction_image_info">
-                                    <div className="direction_image_info_inner">
-                                        <h2>Text</h2>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="direction_image_info">
-                                <div className="direction_image_info_inner">
-                                    <h2>Text</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
->>>>>>> 73e46e7 (add second section)
+            <section className="connections-section">
+                <div className="connection-lines">
+                    <canvas className="connection-canvas" ref={canvasRef}></canvas>
                 </div>
-            </div>
+                <div className="connection connection-student">
+                    <div className="circle-connection">
+                        <img src={studentIcon} alt="student icon" />
+                    </div>
+                    <p className="connection-text">{text.student}</p>
+                </div>
+                <div className="connection connection-partner">
+                    <div className="circle-connection">
+                        <img src={partnerImg} alt="partner icon" />
+                    </div>
+                    <p className="connection-text">{text.partnership}</p>
+                </div>
+                <div className="connection connection-investor">
+                    <div className="circle-connection">
+                        <img src={investorImg} alt="investor icon" />
+                    </div>
+                    <p className="connection-text">{text.investor}</p>
+                </div>
+                <div className="connection connection-mentor">
+                    <div className="circle-connection">
+                        <img src={mentorImg} alt="mentor icon" />
+                    </div>
+                    <p className="connection-text">{text.mentorship}</p>
+                </div>
+            </section>
 
-            
-          
+            <section className="partners-section">
+                <button className="partner-button arrowLeft" onClick={scrollRight}>❮</button>
+                <div className="partners-slides">
+                    {partners.map((partner, partnerIndex) => (
+                        <img key={partnerIndex} className="partner-logo" src={partners[partnerIndex]} alt="partner"></img>
+                    ))}
+                </div>
+                <button className="partner-button arrowRigth" onClick={scrollLeft}>❯</button>
+            </section>
+
+            <div className="direction-article">
+                <article className="article-block">
+                </article>
+            </div>
 
             <Footer text = "Нужна помощь? Свяжитесь с нами:" number = "+7 (727) 307 95 65" link ="www.technopark.sdu.edu.kz" email = "technopark@sdu.edu.kz" />
         </>
