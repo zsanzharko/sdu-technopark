@@ -1,9 +1,10 @@
 import React from "react";
-import './header.scss'
+import './header.scss';
 import './../buttons/google-button.scss';
 import { menu, admin_menu } from "./menu";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import logoImage from '../../assets/images/logo_new.svg';
+import defaultAvatar from '../../assets/images/blank.svg';
 
 const Header = () => {
     return (
@@ -19,7 +20,12 @@ const Header = () => {
                     </li>))}
                 </ul>
 
-                <button>Login</button>
+                <div className="signed-in">
+                    <b>Sanzhar</b>
+                    <div className="avatar-frame">
+                        <img src={defaultAvatar} alt="logo" loading="lazy" />
+                    </div>
+                </div>
             </div>
         </nav>
     )
