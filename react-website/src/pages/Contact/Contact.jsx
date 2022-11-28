@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../../components/header/Header';
 import './contact.scss'
 import Footer from '../../components/footer/Footer';
-import nazim from '../../assets/images/nazim.png';
+import author from '../../assets/images/author.png';
 import book from '../../assets/images/book.png';
 import location from '../../assets/images/LocationIcon.svg';
 
@@ -41,7 +41,7 @@ function Contact() {
                             </div>
                             <div className='heading-container' >
                                 <div className='photo-in'>
-                                    <img src={nazim} alt="" />
+                                    <img src={author} alt="" />
                                 </div>
                                 
                             </div>
