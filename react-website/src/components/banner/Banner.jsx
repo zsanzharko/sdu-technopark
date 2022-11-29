@@ -31,24 +31,24 @@ const BannerHeader = (props) => {
         })
     }
 
-    window.addEventListener("load", () => {
-        const bannerWheel = document.querySelector(".banner-wheel");
+    // window.addEventListener("load", () => {
+        // const bannerWheel = document.querySelector(".banner-wheel");
     
-        bannerWheel.addEventListener("click", () => {
-            document.querySelector(".information-section").scrollIntoView({behavior: "smooth", block: "start"});
-        })
-    })
+        // bannerWheel.addEventListener("click", () => {
+            // document.querySelector(".information-section").scrollIntoView({behavior: "smooth", block: "start"});
+        // })
+    // })
 
-    window.addEventListener("scroll", () => {
-        const wheelContainer = document.querySelector(".banner-animation");
-        const wheelOutside = document.querySelector(".outside-wheel");
-        const arrow = document.querySelector(".arrowDown");
+    // window.addEventListener("scroll", () => {
+        // const wheelContainer = document.querySelector(".banner-animation");
+        // const wheelOutside = document.querySelector(".outside-wheel");
+        // const arrow = document.querySelector(".arrowDown");
 
-        if(wheelContainer.getBoundingClientRect().top <= (document.documentElement.clientHeight / 4 * 3)) {
-            wheelOutside.classList.add("animation");
-            arrow.classList.add("animation");
-        }
-    })
+        // if(wheelContainer.getBoundingClientRect().top <= (document.documentElement.clientHeight / 4 * 3)) {
+        //     wheelOutside.classList.add("animation");
+        //     arrow.classList.add("animation");
+        // }
+    // })
 
     return (
         <div className="banner" onMouseEnter={arrowAnimation} onMouseLeave={arrowAnimation}>

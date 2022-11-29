@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import BannerHeader from '../../components/banner/Banner';
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
-import "./information";
 
 // styles
 import './home.scss';
@@ -53,7 +52,121 @@ const Home = () => {
     const scrollRight = () => {
         let num = document.querySelector(".partner-logo").clientWidth + 218 * document.documentElement.clientWidth / 1920;
         document.querySelector(".partners-slides").scrollLeft -= num;
-    }  
+    } 
+
+    const bannerWheelRef = useRef();
+    const [bannerWheelIsVisible, setBannerWheelIsVisible] = useState();
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            setBannerWheelIsVisible(entry.isIntersecting);
+        })
+        observer.observe(bannerWheelRef.current);
+
+        if(bannerWheelIsVisible) {
+            const bannerWheel = document.querySelector(".banner-wheel")
+            bannerWheel.addEventListener("click", () => {
+                document.querySelector(".information-section").scrollIntoView({behavior: "smooth", block: "start"});
+                infoAnimation();
+            })
+
+            const wheelOutside = document.querySelector(".outside-wheel");
+            const arrow = document.querySelector(".arrowDown");
+
+            wheelOutside.classList.add("animation");
+            arrow.classList.add("animation");
+        }
+    })
+
+    const infoSectionRef = useRef();
+    const [infoSectionIsVisible, setInfoSectionIsVisible] = useState();
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            setInfoSectionIsVisible(entry.isIntersecting);
+        })
+        observer.observe(infoSectionRef.current);
+
+        if(infoSectionIsVisible && window.pageYOffset >= document.documentElement.clientHeight * 0.5) {
+            infoAnimation();
+        }
+    })
+
+    const infoAnimation = () => {
+        const info = document.querySelector(".information-section");
+        const chess = document.querySelector(".chess");
+        const bulb = document.querySelector(".bulb");
+
+        info.classList.add("animation");
+        chess.classList.add("animation");
+        bulb.classList.add("animation");
+    }
+
+    const dirSectionRef = useRef();
+    const [dirSectionIsVisible, setDirSectionIsVisible] = useState();
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            setDirSectionIsVisible(entry.isIntersecting);
+        })
+        observer.observe(dirSectionRef.current);
+
+        if(dirSectionIsVisible) {
+            const wheelOutside = document.querySelector(".second-outside-wheel");
+            const wheelInside = document.querySelector(".second-inside-wheel");
+            const directionSection = document.querySelector(".direction-section");
+            const blocks = document.querySelectorAll(".direction-block");
+            const circle = document.querySelector(".circle");
+            const titles = Array.from(document.querySelectorAll(".block-title"));
+            const images = Array.from(document.querySelectorAll(".block-img"));
+            const firstBlock = document.querySelector(".firstBlock");
+            const secondBlock = document.querySelector(".secondBlock");
+            const thirdBlock = document.querySelector(".thirdBlock");
+          
+            wheelOutside.classList.add("second-outside-animation");
+            wheelInside.classList.add("second-inside-animation");
+            directionSection.classList.add("animation");
+            setTimeout(() => {
+                blocks.forEach(e => {
+                    e.style.opacity = 1;
+                })
+                circle.style.zIndex = 98;
+                setTimeout(() => {
+                    firstBlock.classList.add("animation");
+                    secondBlock.classList.add("animation");
+                    thirdBlock.classList.add("animation");
+                    for(let i = 0; i < titles.length; i++) {
+                        titles[i].style.opacity = 1;
+                        images[i].style.opacity = 1;
+                    }
+                }, 500);
+            }, 1500);
+
+            const article = document.querySelector(".direction-article");
+            const articleBlock = document.querySelector(".article-block");
+            let blocksArr = [firstBlock, secondBlock, thirdBlock];
+          
+            blocksArr.forEach(e => {
+              e.addEventListener("click", () => {
+                article.style.top = `${document.documentElement.scrollTop}px`;
+                article.style.display = "block";
+                document.documentElement.style.overflow = "hidden";
+              })
+            })
+          
+            article.addEventListener("click", (e) => {
+              if(e.target === articleBlock) {
+                return;
+              } else {
+                article.style.display = "none";
+                document.documentElement.style.overflow = "auto";
+              }
+            })
+        }
+    })
 
     return (
         <>
@@ -73,17 +186,18 @@ const Home = () => {
                 <div className="banner-slide" style={{backgroundImage: "url(https://elceo.com/wp-content/uploads/2019/06/coding.jpg)"}}></div>
             </BannerHeader>
 
-            <div className="banner-animation">
+            <div className="banner-animation" ref={bannerWheelRef}>
                 <div className="banner-wheel">
                     <div className="banner-img-container">
-                        <img className="banner-img outside-wheel" src={outsideWheel} alt="wheel" />
-                        <img className="banner-img inside-wheel" src={insideWheel} alt="wheel" />
-                        <button className="banner-arrow arrowDown">❮</button>
+                        <img className={`banner-img outside-wheel`} src={outsideWheel} alt="wheel" />
+                        <img className={`banner-img inside-wheel`} src={insideWheel} alt="wheel" />
+                        <button className={`banner-arrow arrowDown`}>❮</button>
+                        {/* ${containerIsVisible ? "animation" : ""} */}
                     </div>
                 </div>
             </div>
 
-            <section className="information-section">
+            <section className="information-section" ref={infoSectionRef}>
                 <div className="information-wrapper">
                     <img className="information-image chess" src={chessImg} alt="chessImg" />
                     <img className="information-image bulb" src={bulbImg} alt="bulbImg" />
@@ -166,7 +280,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className="partners-section">
+            <section className="partners-section" ref={dirSectionRef}>
                 <button className="partner-button arrowLeft" onClick={scrollRight}>❮</button>
                 <div className="partners-slides">
                     {partners.map((partner, partnerIndex) => (
