@@ -189,10 +189,9 @@ const Home = () => {
             <div className="banner-animation" ref={bannerWheelRef}>
                 <div className="banner-wheel">
                     <div className="banner-img-container">
-                        <img className={`banner-img outside-wheel`} src={outsideWheel} alt="wheel" />
-                        <img className={`banner-img inside-wheel`} src={insideWheel} alt="wheel" />
-                        <button className={`banner-arrow arrowDown`}>❮</button>
-                        {/* ${containerIsVisible ? "animation" : ""} */}
+                        <img className="banner-img outside-wheel" src={outsideWheel} alt="wheel" />
+                        <img className="banner-img inside-wheel" src={insideWheel} alt="wheel" />
+                        <button className="banner-arrow arrowDown">❮</button>
                     </div>
                 </div>
             </div>
