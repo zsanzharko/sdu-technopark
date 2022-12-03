@@ -1,18 +1,18 @@
 export const menu = [
     {
-        title: 'Актуальное',
+        title: 'АКТУАЛЬНОЕ',
         link: '/actual'
     },
     {
-        title: 'Сотрудничество',
+        title: 'СОТРУДНИЧЕСТВО',
         link: '/cooperation'
     },
     {
-        title: 'О нас',
+        title: 'О НАС',
         link: '/about'
     },
     {
-        title: 'Контакты',
+        title: 'КОНТАКТЫ',
         link: '/contact'
     },
 ]
