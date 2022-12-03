@@ -16,7 +16,7 @@ const Header = () => {
 
                 <ul>{menu.map((item, idx) => (
                     <li key={`menu key ${idx}`}>
-                        <Link to={item.link}>{item.title}</Link>
+                        <Link className='page-link' to={item.link}>{item.title}</Link>
                     </li>))}
                 </ul>
 
@@ -26,18 +26,10 @@ const Header = () => {
     );
 }
 
+export default Header;
 
 // Хз зачем нужен код снизу
 // Но лучше не буду трогать
-function myFunction(x) {
-    if (x.className === "topnav") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
-    }
-  }
-
-export default Header;
 
 export const AdminHeader = () => {
     return (
