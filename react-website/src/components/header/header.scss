@@ -34,49 +34,4 @@
         display: inline-block;
         padding: 0 50px;
     }
-
-    .mini-profile {
-        display: flex;
-        align-items: center;
-
-        b {
-            font-family: 'Roboto', serif;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 20px;
-            text-align: center;
-            text-decoration: none;
-            color: #4F4F4F;
-            padding: 0 10px;
-        }
-
-        .avatar-frame {
-            display: flex;
-            border-radius: 50%;
-            height: 3em;
-            width: 3em;
-            box-shadow: 0 0 10px #8A939B;
-            cursor: pointer;
-
-            img {
-                height: 2em;
-                margin: auto;
-            }
-        }
-
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            background-color: red;
-            margin-top: 2em;
-            z-index: 1;
-
-            a {
-                font-weight: 400;
-                font-size: 15px;
-                text-align: center;
-                display: block;
-            }
-        }
-    }
 }
