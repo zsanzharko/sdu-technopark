@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../../components/header/Header';
 import './contact.scss'
 import Footer from '../../components/footer/Footer';
 import author from '../../assets/images/author.png';
