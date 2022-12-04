@@ -1,6 +1,9 @@
 import React from 'react';
 import Header from '../../components/header/Header';
 import BannerHeader from '../../components/banner/Banner';
+import './post.scss'
+import Footer from '../../components/footer/Footer';
+
 
 
 function Post(props) {
@@ -10,7 +13,7 @@ function Post(props) {
                 <div className='post'>
                     <div className='post-name'>
                         <p>{props.title}</p>
-
+ 
                     </div>
                     <div className='post-content'>
                         <p>{props.content}</p>
@@ -23,6 +26,7 @@ function Post(props) {
 
                 </div>
             </div>
+
 
             
         </>

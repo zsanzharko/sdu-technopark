@@ -2,16 +2,15 @@
 .main-content{
     display: flex;
     flex-direction: row;
-    height: 1080px;
-    background: url('../../assets/images/back-actual.png');
-    background-attachment: fixed;
-    background-size: cover;
+    height: 100%;
+    background: url('../../assets/images/sdu.png') bottom, url('../../assets/images/back-actual.png') fixed repeat;
+    background-size: contain, cover;
     background-repeat: no-repeat;
     .to-the-top{
+        display: flex;
         width: 8%;
-        height:100%;
-        >button{
-            padding-top: 1rem;
+
+        .top-button{
             display: flex;
             flex-direction: row;
             width: 100%;
@@ -19,9 +18,22 @@
             border: none;
             background-color: #0A2354;
             background-attachment: fixed;
-            opacity: 0.8;
+            opacity: 0;
             color: $lightness-color;
             justify-content: center;
+
+            .scroll{
+                position: inherit;
+                width: 100%;
+                height: 100%;
+                background-color: #0A2354;
+                border: none;
+            }
+            
+        }
+        >button:hover{
+            opacity: 0.8;
+            cursor: pointer;
         }
     }
 
@@ -31,7 +43,9 @@
         width: 65%;
         height: 100%;
         align-items: center;
+        padding: 58px 80px;
         .actualnoe{
+            padding-bottom: 2rem;
             >p{
                 color: $lightness-color;
                 font-family: 'Roboto';

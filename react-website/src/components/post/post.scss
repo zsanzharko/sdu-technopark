@@ -1,12 +1,37 @@
+@import "../const/colors.scss";
+
 .main-post{
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 100%;
+    background-color: $lightness-color;
+    padding: 24px 59px;
+    border-radius: 20px;
     .post{
         display: flex;
         flex-direction: column;
+        width: 100%;
+        
         .post-name{
-
+            text-align: center;
+            color: $second-color;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 48px;
+            line-height: 56px;
+        }
+        .post-content{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 23px;
+        }
+        .post-image{
+            >img{
+                width: 100%;
+            }
         }
     }
     .comment{
