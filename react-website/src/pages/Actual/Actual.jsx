@@ -1,50 +1,43 @@
 import React from 'react';
 import Header from '../../components/header/Header';
 import BannerHeader from '../../components/banner/Banner';
+import Post from '../../components/post/Post'
+import union from '../../assets/images/Union.png'
+import PostImage from '../../assets/images/PostImage.png'
 
 import './actual.scss'
 
 function Actual() {
+    const title = 'Тамагочи в SDU'
+    const content = 'Обожечки! Да это же настоящие тамагочи из детства! Вы можете играть, кормить, ухаживать за питомцем, которого выберете из 168 предоставленных персонажей! Тут есть даже Наруто и Патрик! И ты уже точно не забудешь его дома, ведь эти тамагочи еще и брелоки!———————————————————————Наличие и размер необходимого вам товара обязательно уточняйте через директ, сообщения группы или ватсапАктуальные цены вы можете посмотреть на '
+    const img = PostImage
+
     return (
         <>
-            <Header />
-            <BannerHeader />
+            <Header/>
+            <div className='main-content'>
+                <div className='to-the-top'>
 
-            <main className='main-content'>
-                <div className="main-content-title-place">
-                    <div className="main-content-title">
-                        <h1>Новости</h1>
-                    </div>
-                    {/* <div id='main-content-alertion-text'>
-                        <p>
-                            Авторизуйтесь, чтобы написать комментарий
-                        </p>
-                    </div> */}
-
+                    <button className='top-button'>
+                        <img src={union} alt="union" />
+                        <p>Наверх</p>
+                    </button>
                 </div>
-                <div className='news-line'></div>
-                <div id="main-news-card">
-                    <div className="card-split major"></div>
-                    <div className="card-split minor news-info">
-                        <div className="news-info-main-title">
-                            <h1>
-                                Some text to title
-                            </h1>
-                        </div>
-                        <div className="news-info-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Facilisi cras fermentum odio eu feugiat pretium nibh ipsum. Arcu non sodales neque sodales. Odio eu feugiat pretium nibh ipsum.
-                                Vel pretium lectus quam id leo. Donec enim diam vulputate ut pharetra. Diam sollicitudin tempor id eu nisl. Dictumst quisque sagittis
-                                purus sit amet volutpat consequat. Porta non pulvinar neque laoreet suspendisse interdum. Convallis aenean et tortor at risus viverra adipiscing.
-                                In hendrerit gravida rutrum quisque. Nibh nisl condimentum id venenatis a condimentum.</p>
-                            <div className="news-info-bottom-functions">
-                                <div className="news-info-functions-split">asoif</div>
-                                <div className="news-info-functions-split">asfa</div>
-                            </div>
-                        </div>
+                <div className='post-container'>
+                    <div className='actualnoe'>
+                        <p>Актуальное</p>
+                    </div>
+                    <div className='posts'>
+                        <Post title = {title} content = {content} image = {img}/>
+
                     </div>
                 </div>
-            </main>
+                <div className='filter-post'>
+
+                </div>
+            </div>
+
+            
         </>
     );
 }
