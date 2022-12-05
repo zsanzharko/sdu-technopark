@@ -1,10 +1,11 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import ScrollToTop from "react-scroll-to-top";
 
 import Header from '../../components/header/Header';
-import BannerHeader from '../../components/banner/Banner';
 import Post from '../../components/post/Post'
-import union from '../../assets/images/Union.png'
+import Comment from '../../components/comment/Comment'
+
+// import union from '../../assets/images/Union.png'
 import PostImage from '../../assets/images/PostImage.png'
 import { ReactComponent as MySVG } from "../../assets/images/UpSelection.svg";
 
@@ -16,8 +17,6 @@ function Actual() {
     const content = 'Обожечки! Да это же настоящие тамагочи из детства! Вы можете играть, кормить, ухаживать за питомцем, которого выберете из 168 предоставленных персонажей! Тут есть даже Наруто и Патрик! И ты уже точно не забудешь его дома, ведь эти тамагочи еще и брелоки!———————————————————————Наличие и размер необходимого вам товара обязательно уточняйте через директ, сообщения группы или ватсапАктуальные цены вы можете посмотреть на '
     const img = PostImage
 
-    var scrollToTopBtn = document.getElementById("scrollToTopBtn")
-    var rootElement = document.documentElement;
 
 
     return (
@@ -38,15 +37,11 @@ function Actual() {
                     </div>
                     <div className='posts'>
                         <Post title = {title} content = {content} image = {img}/>
-                        <Post title = {title} content = {content} image = {img}/>
-                        <Post title = {title} content = {content} image = {img}/>
-
-
-
+                        <Comment/>
                     </div>
                 </div>
                 <div className='filter-post'>
-
+                    
                 </div>
             </div>
 

@@ -1,12 +1,34 @@
-import React from 'react';
-import Header from '../../components/header/Header';
-import BannerHeader from '../../components/banner/Banner';
+import React, {useState} from 'react';
+
 import './post.scss'
-import Footer from '../../components/footer/Footer';
+
+
+import like from "../../assets/images/like.png"
+import comment from "../../assets/images/comment.png"
+import share from "../../assets/images/share.png"
+import menavatar from "../../assets/images/men-avatar.png"
+
+
+
+
 
 
 
 function Post(props) {
+    const [likes, setLikes] = useState(0);
+    const [isClicked, setIsClicked] = useState(false);
+
+    const handleClick = () => {
+        if (isClicked) {
+        setLikes(likes - 1);
+        } else {
+        setLikes(likes + 1);
+        }
+        setIsClicked(!isClicked);
+    };
+
+    const text = 'Напишите комментарий...'
+
     return (
         <>
             <div className='main-post'>
@@ -21,10 +43,26 @@ function Post(props) {
                     <div className='post-image'>
                         <img src={props.image} alt="" />
                     </div>
+                    <div className='like-comm-share'>
+                        <button className={ `like-button-${isClicked && 'liked'}` } onClick={ handleClick }>
+                            <img src={like} alt="" />
+                            <span className="likes-counter">{ `${likes}` }</span>
+                        </button>
+
+                        <button className='comment-button'>
+                            <img src={comment} alt="" />
+                            <span>5</span>
+                        </button>
+                        <button className='share-button'>
+                            <img src={share} alt="" />
+                        </button>
+                    </div>
                 </div>
                 <div className='comment'>
 
                 </div>
+
+                
             </div>
 
 
