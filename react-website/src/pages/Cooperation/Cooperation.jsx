@@ -6,7 +6,7 @@ import './cooperation.scss';
 
 import circle from "../../assets/images/circle-for-categories.png";
 import mountain from "../../assets/images/mountains-for-categories.png";
-// import wheel from "../../assets/images/wheel-for-categories";
+import wheel from "../../assets/images/wheelicon-for-cooperation.png";
 
 function Cooperation() {
     return (
@@ -14,33 +14,16 @@ function Cooperation() {
             <Header />
 
             <section className="categories">
-                <div className="category">
-                    <h2 className="category-title title-1">Выберите категорию</h2>
+
+                <section className="google-form">
                     <div className="img-container">
                         <img className="circle" src={circle} alt="" />
+                        <img className="wheel" src={wheel} alt="" />
                         <img className="mountains" src={mountain} alt="" />
-                        <span>1</span>
                     </div>
-                    <ul className="choice-list">
-                        <li className="choice-item"><span>Software</span></li>
-                        <li className="choice-item"><span>Hardware</span></li>
-                        <li className="choice-item"><span>Enterpreneurship office</span></li>
-                    </ul>
-                </div>
-                <div className="category">
-                    <h2 className="category-title title-2">Выберите направление</h2>
-                    <div className="img-container">
-                        <img className="circle" src={circle} alt="" />
-                        <img className="mountains" src={mountain} alt="" />
-                        <span>2</span>
-                    </div>
-                    <ul className="choice-list">
-                    <li className="choice-item"><span>Student</span></li>
-                        <li className="choice-item"><span>Partner</span></li>
-                        <li className="choice-item"><span>Mentor</span></li>
-                        <li className="choice-item"><span>Investor</span></li>
-                    </ul>
-                </div>
+                    <iframe title="google form" src="https://docs.google.com/forms/d/e/1FAIpQLSdJ_6W_12zZGppsD4v9ovhleha-A1KTtFs_ihCRPgElIoWFrQ/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0" scrolling="no"></iframe>
+                </section>
+
             </section>
 
             <Footer text = "Нужна помощь? Свяжитесь с нами:" number = "+7 (727) 307 95 65" link ="www.technopark.sdu.edu.kz" email = "technopark@sdu.edu.kz" />
