@@ -1,10 +1,8 @@
 import React from 'react';
 import ScrollToTop from "react-scroll-to-top";
-
 import Header from '../../components/header/Header';
 import Post from '../../components/post/Post'
 import Comment from '../../components/comment/Comment'
-
 // import union from '../../assets/images/Union.png'
 import PostImage from '../../assets/images/PostImage.png'
 import { ReactComponent as MySVG } from "../../assets/images/UpSelection.svg";
@@ -37,7 +35,6 @@ function Actual() {
                     </div>
                     <div className='posts'>
                         <Post title = {title} content = {content} image = {img}/>
-                        <Comment/>
                     </div>
                 </div>
                 <div className='filter-post'>

@@ -1,22 +1,25 @@
 import React, {useState} from 'react';
-
 import './post.scss'
-
-
 import like from "../../assets/images/like.png"
 import comment from "../../assets/images/comment.png"
 import share from "../../assets/images/share.png"
 import menavatar from "../../assets/images/men-avatar.png"
-
-
-
-
-
+import Comment from '../comment/Comment';
 
 
 function Post(props) {
+    const [isShown, setIsShown] = useState(false);
+
     const [likes, setLikes] = useState(0);
     const [isClicked, setIsClicked] = useState(false);
+
+    const takeClick = event => {
+        // 👇️ toggle shown state
+        setIsShown(current => !current);
+    
+        // 👇️ or simply set it to true
+        // setIsShown(true);
+      };
 
     const handleClick = () => {
         if (isClicked) {
@@ -49,7 +52,7 @@ function Post(props) {
                             <span className="likes-counter">{ `${likes}` }</span>
                         </button>
 
-                        <button className='comment-button'>
+                        <button className='comment-button' onClick={takeClick}>
                             <img src={comment} alt="" />
                             <span>5</span>
                         </button>
@@ -59,7 +62,7 @@ function Post(props) {
                     </div>
                 </div>
                 <div className='comment'>
-
+                    {isShown && <Comment />}
                 </div>
 
                 
