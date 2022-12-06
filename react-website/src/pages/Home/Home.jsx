@@ -36,6 +36,8 @@ const text = {
     partnership: "партнерство",
     investor: "инвестор",
     mentorship: "менторство",
+    articleTitle: "",
+    articleText: "",
 }
 
 const partners = [
@@ -106,6 +108,7 @@ const Home = () => {
 
     const dirSectionRef = useRef();
     const [dirSectionIsVisible, setDirSectionIsVisible] = useState();
+    const [articleIndex, setArticleIndex] = useState(0);
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -148,14 +151,15 @@ const Home = () => {
             const article = document.querySelector(".direction-article");
             const articleBlock = document.querySelector(".article-block");
             let blocksArr = [firstBlock, secondBlock, thirdBlock];
-          
-            blocksArr.forEach(e => {
-              e.addEventListener("click", () => {
-                article.style.top = `${document.documentElement.scrollTop}px`;
-                article.style.display = "block";
-                document.documentElement.style.overflow = "hidden";
-              })
-            })
+
+            for (let i = 0; i < blocksArr.length; i++) {
+                blocksArr[i].addEventListener("click", () => {
+                    article.style.top = `${document.documentElement.scrollTop}px`;
+                    article.style.display = "block";
+                    document.documentElement.style.overflow = "hidden";
+                    setArticleIndex(i);
+                  })
+            }
           
             article.addEventListener("click", (e) => {
               if(e.target === articleBlock) {
@@ -167,6 +171,14 @@ const Home = () => {
             })
         }
     })
+
+    if (articleIndex === 0) {
+        text.articleTitle = text.hardware;
+    } else if(articleIndex === 1) {
+        text.articleTitle = text.software;
+    } else {
+        text.articleTitle = text.enterpreneurship;
+    }
 
     return (
         <>
@@ -235,18 +247,21 @@ const Home = () => {
                         <div className="firstBlock">
                             <img className="block-img firstBlock-img" src={hardware} alt="hardware" />
                             <h2 className="block-title firstBlock-title">{text.hardware}</h2>
+                            <div className="red-circle"></div>
                         </div>
                     </div>
                     <div className="direction-block second">
                         <div className="secondBlock">
                             <img className="block-img secondBlock-img" src={software} alt="software" />
                             <h2 className="block-title secondBlock-title">{text.software}</h2>
+                            <div className="red-circle"></div>
                         </div>
                     </div>
                     <div className="direction-block third">
                         <div className="thirdBlock">
                             <img className="block-img thirdBlock-img" src={enterpreneurship} alt="enterpreneurship" />
                             <h2 className="block-title thirdBlock-title">{text.enterpreneurship}</h2>
+                            <div className="red-circle"></div>
                         </div>
                     </div>
                 </section>
@@ -254,27 +269,19 @@ const Home = () => {
 
             <section className="connections-section">
                 <div className="connection connection-student">
-                    <div className="circle-connection">
-                        <img src={studentIcon} alt="student icon" />
-                    </div>
+                    <img src={studentIcon} alt="student icon" />
                     <p className="connection-text">{text.student}</p>
                 </div>
                 <div className="connection connection-partner">
-                    <div className="circle-connection">
-                        <img src={partnerImg} alt="partner icon" />
-                    </div>
+                    <img src={partnerImg} alt="partner icon" />
                     <p className="connection-text">{text.partnership}</p>
                 </div>
                 <div className="connection connection-investor">
-                    <div className="circle-connection">
-                        <img src={investorImg} alt="investor icon" />
-                    </div>
+                    <img src={investorImg} alt="investor icon" />
                     <p className="connection-text">{text.investor}</p>
                 </div>
                 <div className="connection connection-mentor">
-                    <div className="circle-connection">
-                        <img src={mentorImg} alt="mentor icon" />
-                    </div>
+                    <img src={mentorImg} alt="mentor icon" />
                     <p className="connection-text">{text.mentorship}</p>
                 </div>
             </section>
@@ -291,6 +298,11 @@ const Home = () => {
 
             <div className="direction-article">
                 <article className="article-block">
+                    <div className="article-cross">
+                        <span></span><span></span>
+                    </div>
+                    <h2>{text.articleTitle}</h2>
+                    <p>{text.articleText}</p>
                 </article>
             </div>
 

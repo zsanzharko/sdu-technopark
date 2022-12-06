@@ -14,6 +14,13 @@
     src: url(../../assets/fonts/Roboto/Roboto-Regular.ttf);
 }
 
+@font-face{ 
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 100;
+    src: url(../../assets/fonts/Roboto/Roboto-Thin.ttf);
+}
+
 @keyframes animation-wheel {
     0% {transform: rotate(0deg) scale(1);}
     50% {transform: rotate(180deg) scale(1.3);}
@@ -122,7 +129,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: calc(150 * 100vw / 1920);
+        gap: 10rem;
 
         .info-slide {
             position: relative;
@@ -168,13 +175,47 @@ body {
     }
 }
 
+@media screen and (max-width: 1440px) {
+    @keyframes animation-chess {
+        0% {transform: translateX(650px) rotate(-14deg); opacity: 0;}
+        100% {transform: translateX(61rem) rotate(14deg); opacity: 1;}
+    }
+    .information-section {
+        .information-wrapper {
+            gap: 7rem;
+
+            .info-slide {
+                width: 20rem;
+                height: 40rem;
+
+                .slide-heading {
+                    right: -4.8rem;
+                    font-size: 5rem;
+                }
+
+                .slide-icon {
+                    width: 190px;
+                    height: 190px;
+                }
+
+                .slide-text-container {
+                    .slide-text {
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
 .banner-animation {
     width: 100%;
-    min-height: 176px;
+    min-height: 126px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgba(255, 255, 255, 1); 
+    margin-bottom: 40px;
 
     .arrowDown {
         transform: rotate(270deg);
@@ -257,7 +298,7 @@ body {
         top: calc(50vh - 100px);
         left: calc(50vw - 50px);
         width: 170px;
-        height: 170px;
+        height: 167px;
         border-radius: 50%;
         background: #ffffff;
     }
@@ -272,21 +313,37 @@ body {
             width: 100%;
             height: 100%;
             background: #072a6d;
-            clip-path: polygon(0 0, 0 30%, 52% 50.5%, 77% 0);
+            clip-path: polygon(0 0, 0 30%, 53% 48%, 76.5% 0);
             .firstBlock {
+                position: relative;
                 width: 100%;
                 height: 100%;
                 background: radial-gradient(circle, #ffffff, #ffffff);
-                clip-path: polygon(0 0, 0 29%, 52% 49.5%, 76.5% 0);
-                transition: all ease-in-out 0.5s;
+                clip-path: polygon(0 0, 0 29.7%, 52.9% 47.5%, 76.2% 0);
+                transition: all 0.5s ease-in-out;
+
+                .red-circle {
+                    position: absolute;
+                    z-index: 0;
+                    top: -100%;
+                    left: 10%;
+                    width: 53%;
+                    height: 81%;
+                    background: #9f2728;
+                    border-radius: 50%;
+                    transition: top 0.4s ease-in-out;
+                }
 
                 &.animation {
                     cursor: pointer;
                 }
 
                 &.animation:hover {
-                    background: radial-gradient(circle, #ffffff, rgb(230, 230, 230));
                     transform: scale(1.02);
+
+                    .red-circle {
+                        top: -50%;
+                    }
                 }
             }
         }
@@ -297,21 +354,37 @@ body {
             width: 100%;
             height: 100%;
             background: #072a6d;
-            clip-path: polygon(0 29%, 0 100%, 60.5% 100%, 52% 48.8%);
+            clip-path: polygon(0 29.7%, 0 100%, 60.5% 100%, 52.9% 47.5%);
             .secondBlock {
                 width: 100%;
                 height: 100%;
                 background: radial-gradient(circle, #ffffff, #ffffff);
-                clip-path: polygon(0 30%, 0 100%, 60% 100%, 51.5% 49.5%);
-                transition: all ease-in-out 0.5s;
+                clip-path: polygon(0 30.2%, 0 100%, 60.2% 100%, 52.6% 48%);
+                transition: all 0.5s ease-in-out;
+
+                .red-circle {
+                    position: absolute;
+                    z-index: 0;
+                    bottom: -100%;
+                    left: -100%;
+                    width: 60%;
+                    height: 95%;
+                    background: #9f2728;
+                    border-radius: 50%;
+                    transition: all 0.4s ease-in-out;
+                }
 
                 &.animation {
                     cursor: pointer;
                 }
 
                 &.animation:hover {
-                    background: radial-gradient(circle, #ffffff, rgb(230, 230, 230));
                     transform: scale(1.02);
+
+                    .red-circle {
+                        left: -10%;
+                        bottom: -45%;
+                    }
                 }
             }
         }
@@ -322,21 +395,36 @@ body {
             width: 100%;
             height: 100%;
             background: #072a6d;
-            clip-path: polygon(76.5% 0, 100% 0, 100% 100%, 60% 100%, 52% 49.5%);
+            clip-path: polygon(76.2% 0, 100% 0, 100% 100%, 60.2% 100%, 52.6% 48%);
             .thirdBlock {
                 width: 100%;
                 height: 100%;
                 background: radial-gradient(circle, #ffffff, #ffffff);
-                clip-path: polygon(77% 0, 100% 0, 100% 100%, 60.5% 100%, 52.3% 50.5%);
-                transition: all ease-in-out 0.5s;
+                clip-path: polygon(76.6% 0, 100% 0, 100% 100%, 60.5% 100%, 53% 48.3%);
+                transition: all 0.5s ease-in-out;
+
+                .red-circle {
+                    position: absolute;
+                    z-index: 0;
+                    top: 1%;
+                    right: -100%;
+                    width: 100%;
+                    height: 200%;
+                    background: #9f2728;
+                    border-radius: 50%;
+                    transition: right 0.4s ease-in-out;
+                }
                 
                 &.animation {
                     cursor: pointer;
                 }
 
                 &.animation:hover {
-                    background: radial-gradient(circle, #ffffff, rgb(230, 230, 230));
                     transform: scale(1.02);
+
+                    .red-circle {
+                        right: -61.5%;
+                    }
                 }
             }
         }
@@ -344,46 +432,51 @@ body {
 }
 
 .block-img {
+    z-index: 1;
     position: absolute;
     opacity: 0;
     transition: all ease 1s;
-    width: 70%;
+    
+    &.firstBlock-img {
+        left: 5%;
+        width: 60%;
+    }
 
     &.secondBlock-img {
         bottom: 0;
-        width: 55%;
+        width: 45%;
     }
 
     &.thirdBlock-img {
         right: 0;
         bottom: 0;
-        width: 40%;
+        width: 35%;
     }
 }
 
 .block-title {
+    z-index: 1;
     position: absolute;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
-    font-size: 3rem;
-    color: #9f2728;
+    font-size: 2.5rem;
+    color: #ffffff;
     opacity: 0;
-    text-transform: capitalize;
     transition: all ease 1s;
 
     &.firstBlock-title {
-        top: 25%;
-        left: 36%;
+        top: 19%;
+        left: 35%;
     }
 
     &.secondBlock-title {
-        bottom: 38%;
-        left: 32%;
+        bottom: 28%;
+        left: 27.5%;
     }
 
     &.thirdBlock-title {
-        top: 26%;
-        right: 3%;
+        bottom: 60%;
+        right: 2%;
     }
 }
 
@@ -391,12 +484,13 @@ body {
     position: relative;
     width: 100%;
     height: 591px;
-    background: #072a6d;
+    background: url(../../assets/images/partner-bckg.png), #072a6d;
+    background-blend-mode: multiply;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    align-content: center;
-    padding: 0 calc(162 * 100vw / 1920);
+    // align-content: center;
+    padding: 162px calc(162 * 100vw / 1920);
 
     .connection {
         z-index: 2;
@@ -405,19 +499,9 @@ body {
         gap: 4px;
         align-items: center;
 
-        .circle-connection {
-            width: 16rem;
-            height: 16rem;
-            background: #9f2728;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            & > img {
-                width: 13.5rem;
-                height: 13.5rem;
-            }
+        >img {
+            width: 13.5rem;
+            height: 13.5rem;
         }
 
         .connection-text {
@@ -500,12 +584,57 @@ body {
     cursor: pointer;
 
     .article-block {
+        position: relative;
         width: 80vw;
         height: 80vh;
-        background: #4f4f4f;
+        background: #ffffff;
         box-shadow: 0px 0px 3vw rgba(0, 0, 0, 0.75);
         border-radius: 5%;
         margin: 10vh auto;
+        padding: 4rem;
         cursor: auto;
+
+        .article-cross {
+            position: absolute;
+            top: 4rem;
+            right: 4rem;
+            width: 4rem;
+            height: 4rem;
+            cursor: pointer;
+
+            >span {
+                position: relative;
+                display: block;
+                width: 4rem;
+                height: 8px;
+                background-color: #9f2728;
+                border-radius: 25px;
+                transform: rotate(45deg);
+
+                &:first-of-type {
+                    top: 8px;
+                    transform: rotate(135deg);
+                }
+            }
+        }
+
+        >h2 {
+            text-align: center;
+            font-family: "Roboto", sans-serif;
+            font-weight: 100;
+            color: #000;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        >p {
+            text-align: center;
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            color: #000;
+            font-size: 2rem;
+        }
     }
 }
