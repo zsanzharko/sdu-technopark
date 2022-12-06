@@ -21,7 +21,7 @@ function Cooperation() {
                         <img className="wheel" src={wheel} alt="" />
                         <img className="mountains" src={mountain} alt="" />
                     </div>
-                    <iframe title="google form" src="https://docs.google.com/forms/d/e/1FAIpQLSdJ_6W_12zZGppsD4v9ovhleha-A1KTtFs_ihCRPgElIoWFrQ/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0" scrolling="no"></iframe>
+                    <iframe title="google form" src="https://docs.google.com/forms/d/e/1FAIpQLSdJ_6W_12zZGppsD4v9ovhleha-A1KTtFs_ihCRPgElIoWFrQ/viewform?embedded=true" frameBorder="0" marginHeight="0" marginWidth="0" scrolling="no"></iframe>
                 </section>
 
             </section>
