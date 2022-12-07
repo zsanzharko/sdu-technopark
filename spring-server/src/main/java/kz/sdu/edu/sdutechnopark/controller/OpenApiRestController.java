@@ -1,5 +1,8 @@
 package kz.sdu.edu.sdutechnopark.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,6 +16,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 
 /**
  * Rest controller need to get response with open information.
@@ -48,11 +52,12 @@ public class OpenApiRestController {
    * @return Contact information json in text.
    */
   @GetMapping(value = "/contacts")
-  public String getContactInfo() {
+  public Map<String, Object> getContactInfo() throws JsonProcessingException {
     Optional<OpenInfo> contacts = openInfoRepository.findById("contacts");
-    if (contacts.isPresent()) {
-      return contacts.get().getJsonValue();
+    if (contacts.isEmpty()) {
+      throw new ServerLogicException("Can not find in database key contacts", HttpStatus.NOT_FOUND);
     }
-    throw new ServerLogicException("Can not find in database key contacts", HttpStatus.NOT_FOUND);
+    return new ObjectMapper().readValue(contacts.get().getJsonValue(), new TypeReference<>() {
+    });
   }
 }
