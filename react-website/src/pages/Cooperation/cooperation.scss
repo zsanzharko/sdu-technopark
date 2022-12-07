@@ -18,24 +18,26 @@ html {
 }
 
 .categories {
-  width: 100vw;
+  width: 100%;
   min-height: 3000px;
   background: #072a6d;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 8rem 0 10rem;
+  overflow: hidden;
 }
 
 .google-form {
   position: relative;
   width: 1152px;
-  min-height: inherit;
+  min-height: 3100px;
+  overflow: hidden;
 
   >iframe {
     position: absolute;
-    bottom: 600px;
-    height: 1480px;
+    top: 1500px;
+    height: 100%;
     width: 100%;
     transform: scale(1.8);
   }
