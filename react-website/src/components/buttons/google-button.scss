@@ -1,49 +1,59 @@
-$white: #fff;
-$google-blue: #4285f4;
-$button-active-blue: #1669F2;
+@import "../const/colors.scss";
 
-.google-btn {
-    margin: auto 0 auto auto;
-    width: 184px;
-    height: 42px;
-    background-color: $google-blue;
-    border-radius: 2px;
-    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .25);
+.mini-profile {
+    display: flex;
+    align-items: center;
 
-    .google-icon-wrapper {
+    b {
+        font-family: 'Roboto', serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        text-align: center;
+        text-decoration: none;
+        color: #4F4F4F;
+        padding: 0 10px;
+    }
+
+    .avatar-frame {
+        display: flex;
+        border-radius: 50%;
+        height: 3em;
+        width: 3em;
+        box-shadow: 0 0 10px #8A939B;
+        cursor: pointer;
+
+        img {
+            height: 2em;
+            margin: auto;
+        }
+    }
+
+    .dropdown-menu {
+        width: 6.75em;
         position: absolute;
-        margin-top: 1px;
-        margin-left: 1px;
-        width: 40px;
-        height: 40px;
-        border-radius: 2px;
-        background-color: $white;
-    }
+        background-color: white;
+        overflow: hidden;
+        box-shadow: 0 0 10px #8A939B;
+        margin: 3.5em -3.75em;
+        border-radius: 5px;
+        z-index: 2;
 
-    .google-icon {
-        position: absolute;
-        margin-top: 11px;
-        margin-left: 11px;
-        width: 18px;
-        height: 18px;
-    }
+        a {
+            display: block;
+            position: relative;
+            font-family: 'Roboto', serif;
+            font-style: normal;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 15px;
+            color: #474747;
+            padding: 5px 0;
+        }
 
-    .btn-text {
-        float: right;
-        margin: 11px 11px 0 0;
-        color: $white;
-        font-size: 14px;
-        letter-spacing: 0.2px;
-        font-family: "Roboto";
-    }
-
-    &:hover {
-        box-shadow: 0 0 6px $google-blue;
-    }
-
-    &:active {
-        background: $button-active-blue;
+        a:hover {
+            background-color: #8A939B;
+        }
     }
 }
-
-@import url(https://fonts.googleapis.com/css?family=Roboto:500);

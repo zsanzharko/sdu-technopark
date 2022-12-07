@@ -1,24 +1,20 @@
 export const menu = [
     {
-        title: 'О нас',
-        link: '/about'
-    },
-    {
-        title: 'Актуальное',
+        title: 'АКТУАЛЬНОЕ',
         link: '/actual'
     },
     {
-        title: 'Сотрудничество',
+        title: 'СОТРУДНИЧЕСТВО',
         link: '/cooperation'
     },
     {
-        title: 'Контакты',
-        link: '/contact'
+        title: 'О НАС',
+        link: '/about'
     },
     {
-        title: 'ЧаВо',
-        link: '/faq'
-    }
+        title: 'КОНТАКТЫ',
+        link: '/contact'
+    },
 ]
 
 export const admin_menu = [
