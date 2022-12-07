@@ -1,5 +1,6 @@
 package kz.sdu.edu.sdutechnopark.adminpanel.links;
 
+import java.util.List;
 import kz.sdu.edu.sdutechnopark.exceptions.serverlogicexception.ServerLogicException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -30,5 +31,9 @@ public class MainLinkServiceImpl implements MainLinkService {
     }
     link.setLink(updateLink);
     mainLinkRepository.save(link);
+  }
+
+  public List<MainLink> getLinks() {
+    return mainLinkRepository.findAll();
   }
 }
