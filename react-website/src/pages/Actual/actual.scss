@@ -21,6 +21,13 @@
             opacity: 0;
             color: $lightness-color;
             justify-content: center;
+            .scroll-to-top{
+                background-image: url("../../assets/images/UpSelection.png");
+                background-repeat: no-repeat;
+                background-position: top ;
+                background-size:cover;
+                background-attachment: fixed;
+            }
 
             .scroll{
                 position: inherit;
@@ -40,10 +47,10 @@
     .post-container{
         display: flex;
         flex-direction: column;
-        width: 65%;
+        width: 62%;
         height: 100%;
         align-items: center;
-        padding: 58px 80px;
+        padding: 58px 30px 58px 80px;
         .actualnoe{
             padding-bottom: 2rem;
             >p{
@@ -57,12 +64,55 @@
             }
         }
         .posts{
-            width: 80%;
+            width: 100%;
         }
     }
     .filter-post{
         display: flex;
         flex-direction: column;
         width: 27%;
+        padding: 58px 20px;
+        .search-field{
+            margin-top: 40px;
+            >input{
+                width: 78%;
+                height: 57px;
+                border-radius: 40px;
+                background: url("../../assets/images/search.png") right, $lightness-color;
+                background-repeat: no-repeat;
+            }
+        }
+        .post-type{
+            width: 78%;
+            display: flex;
+            flex-direction: column;
+            background-color: $lightness-color;
+            border-radius: 33px;
+            padding: 21px 36px 26px 37px;
+            margin-top: 59px;
+            >p{
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 100;
+                font-size: 20px;
+                line-height: 23px;
+            }
+            .post-type-1{
+                padding-bottom: 8px;
+                border-bottom: solid $primary-color;
+                text-align: center;
+            }
+            .post-type-2{
+                margin-top: 22px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                >p{
+                    margin-left: 1rem;
+                }
+            }
+        }
+
+        
     }
 }
