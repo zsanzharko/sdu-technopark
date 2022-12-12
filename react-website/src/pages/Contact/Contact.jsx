@@ -29,7 +29,7 @@ function Contact() {
             <div className='largest-container'>
                 <div className='outer-container'>
                     <div className='inner-container'>
-                        <p>Контакты</p>
+                        <p>контакты</p>
                     </div>
                 </div>
 

@@ -489,8 +489,7 @@ body {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    // align-content: center;
-    padding: 162px calc(162 * 100vw / 1920);
+    padding: 10rem 5rem;
 
     .connection {
         z-index: 2;
@@ -585,12 +584,12 @@ body {
 
     .article-block {
         position: relative;
-        width: 80vw;
-        height: 80vh;
+        width: 90vw;
+        height: 90vh;
         background: #ffffff;
         box-shadow: 0px 0px 3vw rgba(0, 0, 0, 0.75);
         border-radius: 5%;
-        margin: 10vh auto;
+        margin: 5vh auto;
         padding: 4rem;
         cursor: auto;
 
@@ -632,9 +631,12 @@ body {
         >p {
             text-align: center;
             font-family: "Roboto", sans-serif;
-            font-weight: 400;
+            font-weight: 300;
             color: #000;
-            font-size: 2rem;
+            font-size: 2.2rem;
+            max-height: 90%;
+            overflow-y: scroll;
+            text-align: left;
         }
     }
 }
