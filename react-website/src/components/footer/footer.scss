@@ -135,6 +135,10 @@
                     >p{
                         font-size: x-large;
                     }
+                    >img{
+                        width: 33px;
+                        height: 30px;
+                    }
                 }
             }
         }
@@ -145,5 +149,41 @@
     .footer{
         display: flex;
         flex-direction: column;
+        .copyrights{
+            .need-help{
+                >a{
+                    font-size: xx-large;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 600px) {
+    .footer{
+        display: flex;
+        flex-direction: column;
+        .copyrights{
+            .need-help{
+                >a{
+                    font-size: x-large;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 500px) {
+    .footer{
+        display: flex;
+        flex-direction: column;
+        .copyrights{
+            .need-help{
+                width: 100%;
+                >a{
+                    font-size: 15px;
+                }
+            }
+        }
     }
 }
