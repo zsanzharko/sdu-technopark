@@ -2,15 +2,16 @@
 
 .footer {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    padding: 2.5em 3em;
+    padding: 3em 4em;
+    margin: 0 auto;
     background-color: $lightness-color;
 
     .logos-banner {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-right: 4em;
 
         .technopark-logo img {
             height: 3em;
@@ -18,25 +19,19 @@
         }
 
         .social-networks {
-            display: flex;
-            flex-direction: row;
             align-items: center;
-
             .sn-link img {
                 height: 1.5em;
                 width: auto;
+                margin: 0.5em 0.5em;
             }
         }
     }
 
     .copyrights {
-        display: flex;
-        flex-direction: column;
         color:#072A6D;
 
         .need-help {
-            display: flex;
-            flex-direction: row;
             justify-content: left;
 
             h1 {
@@ -59,21 +54,26 @@
 
         .uni-contacts{
             display: flex;
-            flex-direction: row;
             align-items: center;
             justify-content: left;
 
             .contact{
                 display: flex;
-                flex-direction: row;
                 align-items: center;
+                margin: 1em 3em 0 0;
 
                 p {
                     font-family: 'Roboto', serif;
                     font-style: normal;
                     font-weight: 300;
-                    font-size: 1.8em;
+                    font-size: 1.3em;
                     text-align: center;
+                    margin: 0 0.5em;
+                }
+
+                img {
+                    height: 2em;
+                    width: auto;
                 }
             }
         }

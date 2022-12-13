@@ -9,13 +9,11 @@ import envelope from '../../assets/images/link-icons/envelope-icon/Envelope.svg'
 import {Link} from "react-router-dom";
 
 function Footer() {
-    const number = '+7 (727) 307 95 65'
-    const name = 'Нужна помощь? Свяжитесь с нами:'
+    const phone = 'Нужна помощь? Свяжитесь с нами: +7 (727) 307 95 65'
     const link = 'www.technopark.sdu.edu.kz'
     const email = 'technopark@sdu.edu.kz'
 
-
-    return ( <>
+    return (<>
     
         <div className='footer'>
             <div className='logos-banner'>
@@ -34,11 +32,10 @@ function Footer() {
                     </Link>
                 </div>
             </div>
-            
+
             <div className='copyrights'>
                 <div className='need-help'>
-                    <h1>{name}</h1>
-                    <a href="tel: {number}">{number}</a>
+                    <h1>{phone}</h1>
                 </div>
                 <div className='uni-contacts'>
                     <div className='contact'>
@@ -51,9 +48,7 @@ function Footer() {
                     </div>
                 </div>
             </div>
-
         </div>
-    
     </> );
 }
 
