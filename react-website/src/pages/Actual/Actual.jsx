@@ -51,6 +51,8 @@ function Actual() {
                     </div>
                     <div className='posts'>
                         <Post title = {title} content = {content} image = {img}/>
+                        <Post title = {title} content = {content} image = {img}/>
+
                         
                     </div>
                 </div>
