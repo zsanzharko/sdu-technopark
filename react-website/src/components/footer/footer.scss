@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 5rem 130px;
+    padding: 5rem 0rem 5rem 0rem;
     width: 100%;
 
     background-color: $lightness-color;
@@ -12,7 +12,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 13%;
+        width: 23%;
     }
     .technopark-logo{
         >img{
@@ -25,20 +25,22 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        .instagram{
-            width: 72px;
-            height: 65px;
+        width: 100%;
+        padding-left: 7.5rem;
+        .first{
+            margin-left: 1.65rem;
         }
+        >a{
 
-        >img {
-            
-            width: 49px;
-            height: 45px;
+            >img {
+                width: 49px;
+                height: 49px;
+            }
         }
     }
 
     .copyrights{
-        width:87%;
+        width:77%;
         display: flex;
         flex-direction: column;
         color:#072A6D;
@@ -50,7 +52,7 @@
                 font-family: 'Roboto';
                 
                 font-weight: normal;
-                font-size: 48px;
+                font-size: 3rem;
                 line-height: 171.69%;
                 /* or 86px */
 

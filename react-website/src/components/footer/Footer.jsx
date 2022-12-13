@@ -26,9 +26,9 @@ function Footer() {
                     <img src={sdulogo} alt="Logo TechnoPark" loading="lazy" />
                 </div>
                 <div className='social-networks'>    
-                    <img src={facebook} alt="facebook" loading="lazy" />
-                    <img src={instagram} alt="instagram" loading="lazy" className='instagram' />
-                    <img src={linkedin} alt="linkedin" loading="lazy" />
+                    <a href=""><img src={facebook} alt="facebook" loading="lazy" /></a>
+                    <a href="" className='first'><img src={instagram} alt="instagram" loading="lazy" /></a>
+                    <a href="" className='first'><img src={linkedin} alt="linkedin" loading="lazy" /></a>
                     
                 </div>
             </div>
