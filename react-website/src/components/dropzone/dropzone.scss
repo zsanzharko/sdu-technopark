@@ -1,0 +1,32 @@
+body {
+    text-align: center;
+  }
+  .dropzone-div {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+
+    margin: auto;
+    .text-center{
+        .drag-text {
+            text-align: center;
+            }
+            
+            .drag-text p {
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 100;
+                font-size: 32px;
+                line-height: 38px;
+                /* identical to box height */
+                
+                text-align: center;
+                color: #474747;
+                .textt{
+                    font-size: 24px;
+                    line-height: 38px;
+                }
+            }
+    }
+  }
