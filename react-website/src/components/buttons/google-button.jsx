@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import jwt_decode from "jwt-decode";
 import defaultAvatar from "../../assets/images/blank.svg";
 import './google-button.scss';
-import CLIENT_ID from "./token";
+// import CLIENT_ID from "./token";
 
 const GoogleButton = () => {
 
@@ -27,7 +27,7 @@ const GoogleButton = () => {
     useEffect(() => {
         /* global google */
         google.accounts.id.initialize({
-            client_id: CLIENT_ID,
+            // client_id: CLIENT_ID,
             callback: handleCallbackResponse,
         });
 
