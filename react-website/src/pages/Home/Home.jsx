@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import BannerHeader from '../../components/banner/Banner';
-import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 
 // styles
@@ -182,8 +181,6 @@ const Home = () => {
 
     return (
         <>
-            <Header />
-
             <BannerHeader>
                 <div className="banner-slide" style={{background: `url(${mainImg}), #474747`, backgroundBlendMode: "overlay"}}>
                     <h1 className="banner-h1">
@@ -305,8 +302,6 @@ const Home = () => {
                     <p>{text.articleText}</p>
                 </article>
             </div>
-
-            <Footer text = "Нужна помощь? Свяжитесь с нами:" number = "+7 (727) 307 95 65" link ="www.technopark.sdu.edu.kz" email = "technopark@sdu.edu.kz" />
         </>
     );
 }
