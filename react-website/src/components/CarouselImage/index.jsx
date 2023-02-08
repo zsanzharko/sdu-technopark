@@ -2,10 +2,10 @@ import React from 'react';
 
 import './style.scss';
 
-export const CarouselImage = ({ person, fn }) => {
+export const CarouselImage = ({ person }) => {
   return (
-    <div className="carousel-person" onClick={fn}>
-      <img src={person.img} alt="" onClick={fn} />
+    <div className="carousel-person">
+      <img src={person.img} alt="" />
     </div>
   );
 };

@@ -14,11 +14,11 @@ import { CarouselImage } from "../../components/CarouselImage";
 const teachers = [
   {
     name: "Шаломов Шалабек 1",
-    img: "https://media.istockphoto.com/id/882057366/photo/almaty-city-view.jpg?s=612x612&w=0&k=20&c=tOFoRCmGe5PuHFzNkeD7S2i2bbPs69oqR3FlfJ5btI8="
+    img: shalabek
   },
   {
     name: "Шаломов Шалабек 2",
-    img: shalabek
+    img: "https://images.ctfassets.net/hrltx12pl8hq/qGOnNvgfJIe2MytFdIcTQ/429dd7e2cb176f93bf9b21a8f89edc77/Images.jpg"
   },
   {
     name: "Шаломов Шалабек 3",
@@ -26,7 +26,7 @@ const teachers = [
   },
   {
     name: "Шаломов Шалабек 4",
-    img: "https://media.istockphoto.com/id/1363512170/photo/downtown-almaty-kazakhstan-night.jpg?s=612x612&w=0&k=20&c=iXcsG6qxld1PmrEBFICLqpFXltDYrr03i8KLTFHJki4="
+    img: "https://images.ctfassets.net/hrltx12pl8hq/qGOnNvgfJIe2MytFdIcTQ/429dd7e2cb176f93bf9b21a8f89edc77/Images.jpg"
   },
   {
     name: "Шаломов Шалабек 5",
@@ -34,7 +34,7 @@ const teachers = [
   },
   {
     name: "Шаломов Шалабек 6",
-    img: "https://pixlr.com/images/index/remove-bg.webp"
+    img: "https://images.ctfassets.net/hrltx12pl8hq/qGOnNvgfJIe2MytFdIcTQ/429dd7e2cb176f93bf9b21a8f89edc77/Images.jpg"
   },
   {
     name: "Шаломов Шалабек 7",
@@ -83,7 +83,7 @@ const students = [
 
 function About() {
   const [peopleDatabase, setPeopleDatabase] = useState(students);
-  const [imageArray, setImageArray] = useState(peopleDatabase);
+  const [imageArray, setImageArray] = useState(peopleDatabase.slice(0, 5));
   const [activeButton, setActiveButton] = useState(true);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -112,15 +112,40 @@ function About() {
     }
   }
 
-  useEffect(() => {
-    const minIndex = activeIndex;
-    const maxIndex = activeIndex + 5;
-    const temp = peopleDatabase.slice(minIndex, maxIndex);
-    if (maxIndex > peopleDatabase.length - 1) {
-      const remainder = activeIndex - 3;
-      temp.push(...peopleDatabase.slice(0, remainder));
+  const handleSliderClick = (e) => {
+    const slides = document.querySelectorAll(".carousel-person");
+    if (e.pageX <= window.innerWidth / 2) {
+      slides.forEach((slide) => {
+        slide.style.left = "350px";
+        slide.style.transition = "all 0.2s ease-in-out";
+      })
+      handleLeftClick();
+    } else {
+      slides.forEach((slide) => {
+        slide.style.left = "-350px";
+        slide.style.transition = "all 0.2s ease-in-out";
+      })
+      handleRightClick();
     }
-    setImageArray(temp);
+    setTimeout(() => {
+      slides.forEach((slide) => {
+        slide.style.left = "0px";
+        slide.style.transition = "all 0s ease-in-out";
+      })
+    }, 200);
+  }
+
+  useEffect(() => {
+    setTimeout(() => {
+      const minIndex = activeIndex;
+      const maxIndex = activeIndex + 5;
+      const temp = peopleDatabase.slice(minIndex, maxIndex);
+      if (maxIndex > peopleDatabase.length - 1) {
+        const remainder = activeIndex - 3;
+        temp.push(...peopleDatabase.slice(0, remainder));
+      }
+      setImageArray(temp);
+    }, 200)
   }, [activeIndex, peopleDatabase]);
 
   return (
@@ -144,15 +169,8 @@ function About() {
           <button disabled={!activeButton} onClick={handleButtonClick}>учителя</button>
         </div>
         <div className="about-carousel">
-          <div className="about-carousel__wrapper">
-            {imageArray.map((person, index) => {
-              if (index < 2) {
-                return <CarouselImage key={index} fn={handleLeftClick} person={person}/>
-              } else if(index > 2) {
-                return <CarouselImage key={index} fn={handleRightClick} person={person}/>
-              }
-              return <CarouselImage key={index} fn={() => {}} person={person}/>
-            })}
+          <div className="about-carousel__wrapper" onClick={(e) => handleSliderClick(e)}>
+            {imageArray.map((person) => <CarouselImage person={person}/>)}
           </div>
         </div>
         <p className="under-carousel__name">{imageArray[3].name}</p>
