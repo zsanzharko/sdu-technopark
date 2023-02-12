@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./about.scss";
@@ -112,69 +112,71 @@ function About() {
     }
   }
 
-  const handleLeftClick = () => {
-    if (activeIndex === 0) {
-      setActiveIndex(peopleDatabase.length - 1);
-    } else {
-      setActiveIndex(activeIndex - 1);
-    }
-  }
-
-  const handleRightClick = () => {
-    if (activeIndex === peopleDatabase.length - 1) {
-      setActiveIndex(0);
-    } else {
-      setActiveIndex(activeIndex + 1);
-    }
-  }
-
   const handleSliderClick = (e) => {
-    const slidesWrapper = document.querySelector(".about-carousel__wrapper");
     if (e.pageX <= window.innerWidth / 2) {
-      slidesWrapper.style.transform = "translateX(350px)";
-      slidesWrapper.style.transition = "all 0.2s ease-in-out";
-      slidesWrapper.style.pointeEvents = "none";
-      handleLeftClick();
+      return activeIndex === 0 ? setActiveIndex(peopleDatabase.length - 1) : setActiveIndex(activeIndex - 1);
     } else {
-      slidesWrapper.style.transform = "translateX(-350px)";
-      slidesWrapper.style.transition = "all 0.2s ease-in-out";
-      slidesWrapper.style.pointeEvents = "none";
-      handleRightClick();
+      return activeIndex === peopleDatabase.length - 1 ? setActiveIndex(0) : setActiveIndex(activeIndex + 1);
     }
-    setTimeout(() => {
-      slidesWrapper.style.transform = "translateX(0px)";
-      slidesWrapper.style.transition = "all 0s ease-in-out";
-      slidesWrapper.style.pointeEvents = "auto";
-      const minIndex = activeIndex;
-      const maxIndex = activeIndex + 5;
-      const temp = peopleDatabase.slice(minIndex, maxIndex);
-      if (maxIndex > peopleDatabase.length - 1) {
-        const remainder = activeIndex - 3;
-        temp.push(...peopleDatabase.slice(0, remainder));
-      }
-      setImageArray(temp);
-    }, 300);
   }
 
   useEffect(() => {
-    setImageArray(peopleDatabase.slice(0, 5));
-  }, [peopleDatabase]);
+    const minIndex = activeIndex;
+    const maxIndex = activeIndex + 5;
+    const temp = peopleDatabase.slice(minIndex, maxIndex);
+    if (maxIndex > peopleDatabase.length - 1) {
+      const remainder = activeIndex - 3;
+      temp.push(...peopleDatabase.slice(0, remainder));
+    }
+    setImageArray(temp);
+  }, [activeIndex, peopleDatabase]);
+
+  const ourMissionRef = useRef();
+  const [dirMissionIsVisible, setDirMissionIsVisible] = useState();
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setDirMissionIsVisible(entry.isIntersecting);
+    })
+    observer.observe(ourMissionRef.current);
+
+    if (dirMissionIsVisible) {
+      const puzzles = document.querySelectorAll(".puzzle");
+      const socket = document.querySelector(".socket");
+      const socketBlock = document.querySelector(".socket-block");
+
+      puzzles.forEach((puzzle) => {
+        puzzle.classList.add("animation-puzzle");
+      });
+      setTimeout(() => {
+        socket.classList.add("animation-socket");
+        setTimeout(() => {
+          socketBlock.classList.add("animation-socket");
+        }, 1000);
+      }, 1000);
+    }
+  });
 
   return (
     <div className="about">
-      <section className="about-section first">
+      <section className="about-section first" ref={ourMissionRef}>
         <h2 className="title">наша миссия</h2>
         <div className="about-img-block">
-          <img src={puzzleLeft} alt="" className="puzzle-left" />
-          <div>
+          <img src={puzzleLeft} alt="" className="puzzle puzzle-left" />
+          <div className="socket-block">
             <img src={socket} alt="" className="socket"/>
           </div>
-          <img src={puzzleRight} alt="" className="puzzle-right" />
+          <img src={puzzleRight} alt="" className="puzzle puzzle-right" />
         </div>
         <p><span>трансформировать сообщество СДУ в<br/>комьюнити предпринимателей, где<br/>каждый вне зависимости от своих<br/>скиллов и идей будет иметь<br/>возможность реализовать свои<br/>проекты и довести их до конечного<br/>продукта.</span></p>
-        <button className="banner-arrow arrowDown">❮</button>
+        <button className="banner-arrow arrowDown" onClick={() => {
+          document.querySelector(".about-section.second").scrollIntoView({behavior: "smooth", block: "start"});
+        }}>❮</button>
+        <div className="color-transition left"></div>
+        <div className="color-transition right"></div>
       </section>
-      <section className="about-section">
+
+      <section className="about-section second">
         <h2 className="title">наша команда</h2>
         <div className="about-button-block">
           <button disabled={activeButton} onClick={handleButtonClick}>студенты</button>
@@ -182,18 +184,27 @@ function About() {
         </div>
         <div className="about-carousel">
           <div className="about-carousel__wrapper" onClick={(e) => handleSliderClick(e)}>
-            {imageArray.map((person) => <CarouselImage key={person.id} person={person}/>)}
+            <CarouselImage style={{ opacity: 0.3 }} person={imageArray[0]}/>
+            <CarouselImage style={{ opacity: 0.7 }} person={imageArray[1]}/>
+            <CarouselImage person={imageArray[2]}/>
+            <CarouselImage style={{ opacity: 0.7 }} person={imageArray[3]}/>
+            <CarouselImage style={{ opacity: 0.3 }} person={imageArray[4]}/>
           </div>
         </div>
         <p className="under-carousel__name">{imageArray[3].name}</p>
         <p className="under-carousel__text">Команда Технопарка состоит из наставников, имеющих индустриальный и/или исследовательский опыт. Это преподаватели СДУ, студенты с опытом участия в проектах, эксперты из индустрии.</p>
-        <button className="banner-arrow arrowDown">❮</button>
+        <button className="banner-arrow arrowDown" onClick={() => {
+          document.querySelector(".about-section.third").scrollIntoView({behavior: "smooth", block: "start"});
+        }}>❮</button>
       </section>
-      <section className="about-section">
+
+      <section className="about-section third">
         <div className="about-section-block">
           <img src={sdulogo} alt="" />
           <h2>Раскроем потенциал вместе</h2>
-          <Link to="/cooperation"><button className="block-button">Заполнить форму</button></Link>
+          <Link to="/cooperation" onClick={() => {
+            document.documentElement.scrollIntoView({behavior: "smooth", block: "start"});
+          }}><button className="block-button">Заполнить форму</button></Link>
         </div>
         <div className="img-composition">
           <div>
