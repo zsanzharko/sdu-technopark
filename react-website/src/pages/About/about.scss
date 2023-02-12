@@ -25,6 +25,7 @@
   width: 100%;
   min-height: 1019px;
   border-top: 1px solid #000;
+  overflow-x: hidden;
 
   &.first {
     border-top: none;
@@ -34,8 +35,8 @@
     & > p {
       position: absolute;
       bottom: 115px;
-      left: calc(50% - 341px);
-      max-width: 683px;
+      width: 100%;
+      margin: 0 auto;
     }
   }
 
@@ -45,6 +46,10 @@
     font-size: 36px;
     color: #474747;
     text-align: center;
+
+    & > span {
+      background: rgba(255, 255, 255, 0.5);
+    }
   }
 }
 
@@ -64,11 +69,6 @@
 
   & > img {
     position: absolute;
-    bottom: 0;
-  }
-
-  .puzzle-right {
-    right: 0;
   }
 
   & > div {
@@ -83,6 +83,24 @@
     border: 5px solid #E4E4E4;
     border-radius: 50%;
   }
+}
+
+@media screen and (max-width: 1700px) {
+  .about-img-block {
+    & > div {
+      display: none;
+    }
+  }
+}
+
+.puzzle-right {
+  bottom: -19px;
+  right: 0;
+}
+
+.puzzle-left {
+  bottom: 0;
+  left: 0;
 }
 
 .arrowDown {
@@ -194,6 +212,16 @@
   }
 }
 
+@media screen and (max-width: 1919px) {
+  .about-section-block {
+    margin-top: 250px;
+    margin-left: 150px;
+    & > h2 {
+      max-width: 500px;
+    }
+  }
+}
+
 .block-button {
   width: 355px;
   height: 87px;
@@ -237,5 +265,14 @@
   & > img {
     position: relative;
     z-index: 1;
+  }
+}
+
+@media screen and (max-width: 1550px) {
+  .about-section-block {
+    margin-left: 50px;
+  }
+  .img-composition {
+    right: -100px;
   }
 }

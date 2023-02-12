@@ -3,7 +3,7 @@ import './header.scss';
 import {menu, admin_menu} from "./menu";
 import {Link} from 'react-router-dom';
 import logoImage from '../../assets/images/logo_new.svg';
-import GoogleButton from "../buttons/google-button";
+// import GoogleButton from "../buttons/google-button";
 
 const Header = () => {
 
@@ -20,7 +20,7 @@ const Header = () => {
                     </li>))}
                 </ul>
 
-                <GoogleButton/>
+                {/* <GoogleButton/> */}
             </div>
         </nav>
     );
