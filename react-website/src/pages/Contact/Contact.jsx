@@ -1,7 +1,5 @@
 import React from 'react';
 import './contact.scss';
-import Header from '../../components/header/Header';
-import Footer from '../../components/footer/Footer';
 import author from '../../assets/images/author.png';
 import book from '../../assets/images/book.png';
 import phone from '../../assets/images/Vector.png';
@@ -25,7 +23,6 @@ function Contact() {
 
     return (
         <>
-            <Header/>
             <div className='largest-container'>
                 <div className='outer-container'>
                     <div className='inner-container'>
@@ -80,7 +77,6 @@ function Contact() {
                     
                     </div>
             </div>
-            <Footer  />
         </>
     );
 }

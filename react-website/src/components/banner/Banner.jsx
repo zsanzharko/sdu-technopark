@@ -40,12 +40,12 @@ const BannerHeader = (props) => {
                     {children.map((slide, slideIndex) => (
                         <li key={slideIndex} className="banner-dot" onClick={() => {
                             setCurrentIndex(slideIndex);
-                            document.querySelector(".banner-slides").style.transform = `translateX(-${-100 * slideIndex}vw)`;
+                            document.querySelector(".banner-slides").style.transform = `translateX(-${-100 * slideIndex}%)`;
                         }} style={{backgroundColor:`${slideIndex === currentIndex ? "#9f2728" : "#ffffff"}`}}></li>
                     ))}
                 </ul>
             </div>
-            <div className="banner-slides" style={{transform: `translateX(-${currentIndex * 100}vw)`}}>
+            <div className="banner-slides" style={{transform: `translateX(-${currentIndex * 100}%)`}}>
                 {children}
             </div>
         </div>

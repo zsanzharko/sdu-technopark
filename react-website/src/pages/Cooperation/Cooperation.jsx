@@ -1,6 +1,4 @@
 import React from 'react';
-import Header from '../../components/header/Header';
-import Footer from "../../components/footer/Footer";
 
 import './cooperation.scss';
 
@@ -11,8 +9,6 @@ import wheel from "../../assets/images/wheelicon-for-cooperation.png";
 function Cooperation() {
     return (
         <>
-            <Header />
-
             <section className="categories">
 
                 <section className="google-form">
@@ -26,7 +22,6 @@ function Cooperation() {
 
             </section>
 
-            <Footer text = "Нужна помощь? Свяжитесь с нами:" number = "+7 (727) 307 95 65" link ="www.technopark.sdu.edu.kz" email = "technopark@sdu.edu.kz" />
         </>
     );
 }

@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import ScrollToTop from "react-scroll-to-top";
-import Header from '../../components/header/Header';
 import Post from '../../components/post/Post'
 // import union from '../../assets/images/Union.png'
 
@@ -15,7 +14,6 @@ import relevant from "../../assets/images/relevant.png"
 import { ReactComponent as MySVG } from "../../assets/images/UpSelection.svg";
 
 import './actual.scss'
-import Footer from '../../components/footer/Footer';
 
 function Actual() {
     const title = 'Тамагочи в SDU'
@@ -35,7 +33,6 @@ function Actual() {
     return (
         
         <>
-            <Header/>
             <div className='main-content'>
                 <div className='to-the-top'>
 
@@ -101,10 +98,6 @@ function Actual() {
                     </div>
                 </div>
             </div>
-
-            <Footer />
-
-            
         </>
     );
 }

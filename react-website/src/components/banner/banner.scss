@@ -114,6 +114,7 @@
 }
 
 .banner-slides {
+    width: 100%;
     position: absolute;
     z-index: 0;
     top: 0;
@@ -126,7 +127,7 @@
 }
 
 .banner-slide {
-    width: 100vw;
+    min-width: 100%;
     min-height: inherit;
     background-position: center;
     background-size: cover;
