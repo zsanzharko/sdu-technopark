@@ -36,8 +36,110 @@ const text = {
     partnership: "партнерство",
     investor: "инвестор",
     mentorship: "менторство",
-    articleTitle: "",
-    articleText: "",
+    articleTextH: `<span>IoT lab</span><br><br>
+<span>Основная деятельность:</span>
+научноисследовательская и практическая лаборатория.<br><br>
+
+<span>Лаборатория работает в направлениях:</span><br>
+- разработка IoT устройств.<br>
+- изготовление прототипов.<br>
+- робототехника и электромеханика<br>
+- лазерные и фрезерные работы по материалам типа фанеры и акрила.<br>
+- дроны и радиоуправляемые машины<br>
+- реализация частных проектов от сторонних организаций и предприятий касательно электронных устройств.<br><br>
+
+<span>Например:</span> ремонт, настройка, сборка и изготовление электронных устройств.
+Так же в задачи лаборатории входит развитие у студентов навыков и знаний по основам
+    электроники и схемотехники, развитие
+    инженерного мышления и умения решать
+    сложные производственные задачи, например:
+    администрирование нетворк сетей; выявлять и
+    исправлять поломки электронных компонентов
+    оборудования; проектировать и собирать
+    электронные платы необходимого оборудования;
+    разбираться и программировать
+    микроконтроллеры и микропроцессоры систем
+    автоматики.<br><br>
+
+    Набор в группу ведется по приоритетной
+    специальности ВТиПО (вычислительная техника
+    и программное обеспечение) Инженерного
+    Факультета. Специальности ИС
+    (информационные системы) и все желающие
+    получить вышеописанные навыки тоже
+    допускаются в лабораторию.<br><br>
+
+    Помимо обучения основам электроники,
+    схемотехники и решения производственных
+    задач, лаборатория занимается развитием
+    научных проектов, участвует в различных
+    городских и межвузовских мероприятиях.`,
+    articleTextS: `Команда Технопарка предоставляет <span>решения и
+    продукты для бизнеса</span>, такие как:<br><br>
+    - мобильное приложение<br>
+    - веб приложение<br>
+    - дэшборды<br>
+    - Internet of Things (IoT) решения<br>
+    - Computer Vision<br>
+    <li></li>
+   - Natural Langiage Processing<br><br>
+    Наша команда состоит из опытных
+    преподавателей, магистрантов и докторантов
+    SDU. Также выпусники университета, имеющие
+    большой опыт разработки, консультируют и
+    курируют Технопарк в разработке продуктов.<br><br>
+    Студенты бакалавриата могут получить
+    промышленный опыт разработки программного
+    обеспечения, присоединившись к команде
+    Технопарка.`,
+    articleTextE: `<span>Миссия</span> Офиса предпринимательства (OП) -
+    сподвигать студентов СДУ к
+    предпринимательству посредством обучения,
+    поддержки и наставничества.<br><br>
+    <span>Видение:</span> Содействовать студентам и
+    выпускникам на пути предпринимательства,
+    помочь установить необходимые связи с
+    инвесторами и действующими
+    предпринимателями.<br><br>
+    <span>Кому мы служим:</span> студенты, ППС, сотрудники,
+    исследователи и выпускники, а также население
+    в непосредственной близости от Университета.<br><br>
+    <span>Расположение:</span>
+    ОП располагается на кампусе СДУ и будет
+    включать в себя офисы и коворкинг.<br><br>
+    <span>Деятельность ОП</span> будет в двух основных
+    направлениях:<br><br>
+    1) <span>В рамках учебной программы:</span>
+    Разработка курсов по предпринимательству на
+    факультетах СДУ, преподаваемым в рамках
+    учебных программ на инженерном факультете, в
+    бизнес-школе и на педагогическом факультете.
+    Поддержка ППС учебными планами,
+    методологией, материалами. Основная цель
+    обучения состоит в том, чтобы студенты
+    приобрели базовое понимание о
+    предпринимательстве и соответствующие
+    навыки. Общее количество студентов составит
+    около 200-250 студентов в год.<br>
+    2) <span>Дополнительные меры поддержки:</span><br>
+    а) Серия гостевых лекций от действующих
+    предпринимателей.<br>
+    б) Бизнес-акселератор: программа будет
+    проходить во время зимних и/или летних
+    каникул, продолжительностью 3-4 недели.<br>
+    в) Бизнес-инкубатор и программа
+    наставничества: инциативы призваны
+    объединить сообщество единомышленников,
+    оказать поддержку и предоставить необходимые
+    ресурсы. Участие будет открытым для студентов,
+    сотрудников, ППС кто хочет начать свой бизнес,
+    независимо от стадии (от идеи до запуска),
+    отрасли или типа бизнеса. Участие в этой
+    программе будет длится до 6 месяцев и будет
+    включать в себя доступ к офисным помещениям,
+    технопарку и юридическим, бухгалтерским,
+    финансовым и другим услугам.<br>
+    г) Программа создания венчурных предприятий`,
 }
 
 const partners = [
@@ -108,7 +210,6 @@ const Home = () => {
 
     const dirSectionRef = useRef();
     const [dirSectionIsVisible, setDirSectionIsVisible] = useState();
-    const [articleIndex, setArticleIndex] = useState(0);
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -156,36 +257,40 @@ const Home = () => {
                 blocksArr[i].addEventListener("click", () => {
                     article.style.top = `${document.documentElement.scrollTop}px`;
                     article.style.display = "block";
+
+                    if (i === 0) {
+                        articleBlock.querySelector("h2").innerHTML = text.hardware; 
+                        articleBlock.querySelector("p").innerHTML = text.articleTextH;
+                    }
+                    else if (i === 1) {
+                        articleBlock.querySelector("h2").innerHTML = text.software;
+                        articleBlock.querySelector("p").innerHTML = text.articleTextS;
+                    }
+                    else {
+                        articleBlock.querySelector("h2").innerHTML = text.enterpreneurship;
+                        articleBlock.querySelector("p").innerHTML = text.articleTextE;
+                    }
+                    
                     document.documentElement.style.overflow = "hidden";
-                    setArticleIndex(i);
                   })
             }
           
-            article.addEventListener("click", (e) => {
-              if(e.target === articleBlock) {
+            article.addEventListener("click", (e) => {                
+                if(e.target.hasAttribute("style")) {
+                    article.style.display = "none";
+                    document.documentElement.style.overflow = "auto";
+                }
                 return;
-              } else {
-                article.style.display = "none";
-                document.documentElement.style.overflow = "auto";
-              }
             })
         }
     })
-
-    if (articleIndex === 0) {
-        text.articleTitle = text.hardware;
-    } else if(articleIndex === 1) {
-        text.articleTitle = text.software;
-    } else {
-        text.articleTitle = text.enterpreneurship;
-    }
 
     return (
         <>
             <Header />
 
             <BannerHeader>
-                <div className="banner-slide" style={{background: `url(${mainImg}), #474747`, backgroundBlendMode: "overlay"}}>
+                <div className="banner-slide" style={{backgroundImage: `url(${mainImg})`}}>
                     <h1 className="banner-h1">
                         <span className="span-first">The</span><br />
                         <span className="span-second">Progress</span><br />
@@ -296,13 +401,13 @@ const Home = () => {
                 <button className="partner-button arrowRigth" onClick={scrollLeft}>❯</button>
             </section>
 
-            <div className="direction-article">
+            <div className="direction-article" style={{cursor: "pointer"}}>
                 <article className="article-block">
-                    <div className="article-cross">
-                        <span></span><span></span>
+                    <div className="article-cross" style={{cursor: "pointer"}}>
+                        <span style={{cursor: "pointer"}}></span><span style={{cursor: "pointer"}}></span>
                     </div>
-                    <h2>{text.articleTitle}</h2>
-                    <p>{text.articleText}</p>
+                    <h2>""</h2>
+                    <p>""</p>
                 </article>
             </div>
 
