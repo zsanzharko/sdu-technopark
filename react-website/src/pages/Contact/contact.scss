@@ -1,0 +1,415 @@
+@import "../../components/const/colors.scss";
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 200;
+    src: url(../../assets/fonts/Roboto/Roboto-Thin.ttf);
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    src: url(../../assets/fonts/Roboto/Roboto-Light.ttf);
+}
+
+.largest-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2%;
+    background-image: url("../../assets/images/sss.png");
+}
+.lecturer-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    
+    .maps-container{
+        width:50%;
+        height: 729px;
+        justify-content: center;
+        object-fit: cover;
+        background-size: contain;
+        color: $lightness-color;
+        display: flex;
+        flex-direction: column;
+
+        .sdu-in-google{
+            display: flex;
+            
+            justify-content: center;
+        }
+        .address-cont{
+            display: flex;
+            flex-direction: column;
+            .detailed-address{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                padding: 1rem;
+                
+                >p{
+                    width: 70%;
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: 24px;
+                    text-align: center;
+                }
+
+                >img {
+                    margin: 0 1rem;
+                }
+            }
+
+            .detail-container{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                padding: 1.7rem;
+                .where-to-find{
+                    display: flex;
+                    width: 40%;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    >p{
+                        font-family: 'Roboto';
+                        font-style: normal;
+                        font-weight: 300;
+                        font-size: 24px;
+                        line-height: 171.69%;
+                    }
+                    >img {
+                        margin: 0 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.outer-container{
+    display: flex;
+    width: 757px;
+    height: 95px;
+    align-items: center;
+    justify-content: center;
+    .inner-container{
+        display: flex;
+        width: 648px;
+        height: 100%;
+        border-radius: 66px;
+        align-items: center;
+        justify-content: center;
+        >p{
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
+            font-weight: 200;
+
+            font-size: 128px;
+            
+            /* or 220px */
+
+            text-align: justify;
+            color: $lightness-color;
+        }
+    }
+}
+
+
+.contacts-container{
+    width: 50%;
+    height: 729px;
+    
+    background-image: url("../../assets/images/phone.png");
+    background-repeat: no-repeat;
+    // background-size: cover;
+    background-size: 78%;
+    background-position: bottom left;
+    color: $lightness-color;
+    display: flex;
+    align-items: center;
+
+    .info-contact{
+        width: 100%;
+        height: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        border-right: 5px solid $second-color;
+        align-items: center;
+
+        .empty{
+            width: 50%;
+        }
+
+
+        .content{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            >p{
+            
+                font-family: 'Tahoma';
+                font-style: normal;
+                font-weight: 100;
+                font-size: 20px;
+                line-height: 171.69%;
+                text-align: center;
+            }
+
+            .text{
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 150;
+                font-size: 32px;
+            }
+
+        }
+    }
+    
+    .drawing-line{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 35%;
+        height: 70%;
+        border-radius: 12px;
+        justify-content: center;
+        background: url('../../assets/images/rectangle.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+            
+            .canvas-line{
+                width: 50%;
+                height: 100%;
+            }
+        }
+        
+        .heading-container{
+            
+            width: 100%;
+            height: 60%;
+            display: flex;
+            align-items:flex-end;
+            justify-content: center;
+            
+            
+            
+
+            .photo-in{
+                width: 80%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                >img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+        
+        }
+    }
+
+    .content{
+        display: flex;
+        width: 100%;
+        
+        align-items: center;
+        justify-content: center;
+        
+
+        
+        
+    }
+
+@media all and (max-width: 1700px) {
+    .largest-container{
+        .outer-container{
+            .inner-container{
+                >p{
+                    font-size: 100px;
+                }
+            }
+        }
+        .lecturer-container{
+            .contacts-container{
+                .info-contact{
+                    .drawing-line{
+                        height:auto;
+                        padding: 1rem;
+                        .content{
+                            >p{
+                                font-size: 15px;
+                            }
+                            .text{
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+            .maps-container{
+                .address-cont{
+                    .detail-container{
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        .where-to-find{
+                            width: 45%;
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media all and (max-width: 1420px) {
+    .largest-container{
+        .outer-container{
+            .inner-container{
+               >p{
+                font-size: 70px;
+               } 
+            }
+        }
+        .lecturer-container{
+            .contacts-container{
+                background-size: cover;
+            }
+            .maps-container{
+                .sdu-in-google{
+                    >iframe{
+                        width: 80%;
+                        height:max-content;
+                    }
+                }
+                .address-cont{
+                    .detail-container{
+                        
+                        .where-to-find{
+                            width: 47%;
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media all and (max-width: 960px) {
+    .largest-container{
+        
+        
+        .lecturer-container{
+            display: flex;
+            flex-direction: column;
+            .contacts-container{
+                background-size: contain;
+                width: 100%;
+                background: none;
+                
+               
+                .info-contact{
+                    width: 100%;
+                    height: 90%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    
+                    align-items: center;
+                    .drawing-line{
+                        width: 50%;
+                        height: 90%;
+                        .heading-container{
+                            width: 100%;
+                            height: 60%;
+                            display: flex;
+                            align-items:flex-end;
+                            justify-content: center;
+                        }
+                    }
+                    
+                    .empty{
+                        display: none;
+                    }
+                }
+            }
+            .maps-container{
+                width: 100%;
+                
+                
+            }
+        }
+    }
+
+}
+
+@media all and (max-width: 700px) {
+    .largest-container{
+        
+        .lecturer-container{
+            height: auto;
+            .contacts-container{
+                height: auto;
+                background-size: cover;
+                .info-contact{
+                    .drawing-line{
+                        height:auto;
+                        padding: 1rem;
+                        .content{
+                            >p{
+                                font-size: 15px;
+                            }
+                            .text{
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+            .maps-container{
+                height: 80%;
+                .sdu-in-google{
+                    >iframe{
+                        width: 80%;
+                        height:max-content;
+                    }
+                }
+                .address-cont{
+                    .detail-container{
+                        
+                        .where-to-find{
+                            width: 47%;
+                            >p{
+                                font-size: x-small;
+                            }
+                        }
+                        
+                    }
+                    .detailed-address{
+                        >p{
+                            font-size: x-small;
+                            font-weight: 300;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
