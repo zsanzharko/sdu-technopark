@@ -7,6 +7,7 @@
     background-color: $lightness-color;
     padding: 24px 59px;
     border-radius: 20px 20px 20px 20px;
+    margin-bottom: 3rem;
     .post{
         display: flex;
         flex-direction: column;
@@ -85,9 +86,7 @@
             }
         }
     }
-    .comment{
-
-    }
+    
 
    
 }
