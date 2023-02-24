@@ -25,7 +25,6 @@
   width: 100%;
   min-height: 1019px;
   border-top: 1px solid #000;
-  overflow-x: hidden;
 
   &.first {
     border-top: none;
@@ -55,23 +54,6 @@
 
 :root {
   --white-gradient: linear-gradient(0deg, rgba($color: white, $alpha: 1), rgba($color: white, $alpha: 0.01));
-}
-
-.color-transition {
-  position: absolute;
-  width: 400px;
-  height: 200px;
-  background: linear-gradient(0deg, rgba($color: white, $alpha: 1), rgba($color: white, $alpha: 0.01));
-
-  &.left {
-    left: 0;
-    bottom: 60px;
-  }
-
-  &.right {
-    right: 0px;
-    bottom: 40px;
-  }
 }
 
 .title {
@@ -114,7 +96,7 @@
 }
 
 .puzzle-right {
-  bottom: -19px;
+  bottom: -180px;
   right: 0;
 
   &.animation-puzzle {
@@ -124,7 +106,7 @@
 }
 
 .puzzle-left {
-  bottom: 0;
+  bottom: -150px;
   left: 0;
 
   &.animation-puzzle {

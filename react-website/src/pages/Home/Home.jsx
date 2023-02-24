@@ -6,7 +6,7 @@ import Footer from '../../components/footer/Footer';
 import './home.scss';
 
 import outsideWheel from "../../assets/images/TechnoParkGearLogoOutside.svg";
-import insideWheel from "../../assets/images/TechnoParkGearLogoInside.svg";
+import insideWheel from "../../assets/images/TechnoParkMainLogo_InternalWhite.svg";
 import mainImg from "../../assets/images/electronics.jpg";
 import chessImg from "../../assets/images/ChessPiece.png";
 import bulbImg from "../../assets/images/LightBulb.png";
@@ -25,7 +25,8 @@ import technoparkLogo from "../../assets/images/sdu_technopark_logo.png";
 
 const text = {
     history: "история",
-    slideText: "это наша крутая история не могу она такая крутая еееееееее, но еще есть продолжение оно еще круче погнали это наша крутая история не могу она такая крутая еееееееее, но еще есть продолжение оно еще круче погнали это наша крутая история не могу она такая крутая еееееееее, но еще есть продолжение оно еще круче погнали это наша крутая история",
+    slideText: "это наша крутая история не могу она такая крутая еееееееее, но еще есть продолжение оно еще круче погнали это наша крутая история не могу она такая крутая еееееееее, но еще есть продолжение оно еще круче погнали",
+    readMore: "Читать дальше...",
     vision: "видение",
     opportunities: "возможности",
     hardware: "hardware",
@@ -222,7 +223,6 @@ const Home = () => {
             const wheelInside = document.querySelector(".second-inside-wheel");
             const directionSection = document.querySelector(".direction-section");
             const blocks = document.querySelectorAll(".direction-block");
-            const circle = document.querySelector(".circle");
             const titles = Array.from(document.querySelectorAll(".block-title"));
             const images = Array.from(document.querySelectorAll(".block-img"));
             const firstBlock = document.querySelector(".firstBlock");
@@ -236,7 +236,6 @@ const Home = () => {
                 blocks.forEach(e => {
                     e.style.opacity = 1;
                 })
-                circle.style.zIndex = 98;
                 setTimeout(() => {
                     firstBlock.classList.add("animation");
                     secondBlock.classList.add("animation");
@@ -320,6 +319,7 @@ const Home = () => {
                         <div className="slide-text-container">
                             <p className="slide-text">{text.slideText}</p>
                         </div>
+                        <p className="slide-text_more">{text.readMore}</p>
                     </article>
                     <article className="info-slide">
                         <h2 className="slide-heading">{text.vision}</h2>
@@ -327,6 +327,7 @@ const Home = () => {
                         <div className="slide-text-container">
                             <p className="slide-text">{text.slideText}</p>
                         </div>
+                        <p className="slide-text_more">{text.readMore}</p>
                     </article>
                     <article className="info-slide">
                         <h2 className="slide-heading">{text.opportunities}</h2>
@@ -334,57 +335,73 @@ const Home = () => {
                         <div className="slide-text-container">
                             <p className="slide-text">{text.slideText}</p>
                         </div>
+                        <p className="slide-text_more">{text.readMore}</p>
                     </article>
                 </div>
                 <div className="banner-wheel second-animation">
-                    <div className="banner-img-container">
+                    <div className="banner-img-container second">
                         <img className="banner-img second-outside-wheel" src={outsideWheel} alt="wheel" />
                         <img className="banner-img second-inside-wheel" src={insideWheel} alt="wheel" />
                     </div>
                 </div>
 
                 <section className="direction-section">
-                    <div className="circle"></div>
                     <div className="direction-block first">
                         <div className="firstBlock">
                             <img className="block-img firstBlock-img" src={hardware} alt="hardware" />
-                            <h2 className="block-title firstBlock-title">{text.hardware}</h2>
-                            <div className="red-circle"></div>
+                            <div className="red-circle" />
+                            <div className="white-circle">
+                                <h2 className="block-title firstBlock-title">{text.hardware}</h2>
+                            </div>
                         </div>
                     </div>
                     <div className="direction-block second">
                         <div className="secondBlock">
                             <img className="block-img secondBlock-img" src={software} alt="software" />
-                            <h2 className="block-title secondBlock-title">{text.software}</h2>
-                            <div className="red-circle"></div>
+                            <div className="red-circle" />
+                            <div className="white-circle">
+                                <h2 className="block-title secondBlock-title">{text.software}</h2>
+                            </div>                            
                         </div>
                     </div>
                     <div className="direction-block third">
                         <div className="thirdBlock">
                             <img className="block-img thirdBlock-img" src={enterpreneurship} alt="enterpreneurship" />
-                            <h2 className="block-title thirdBlock-title">{text.enterpreneurship}</h2>
-                            <div className="red-circle"></div>
+                            <div className="red-circle" />
+                            <div className="white-circle">
+                                <h2 className="block-title thirdBlock-title">{text.enterpreneurship}</h2>
+                            </div>
                         </div>
                     </div>
                 </section>
             </section>
 
             <section className="connections-section">
-                <div className="connection connection-student">
-                    <img src={studentIcon} alt="student icon" />
-                    <p className="connection-text">{text.student}</p>
-                </div>
-                <div className="connection connection-partner">
-                    <img src={partnerImg} alt="partner icon" />
-                    <p className="connection-text">{text.partnership}</p>
-                </div>
-                <div className="connection connection-investor">
-                    <img src={investorImg} alt="investor icon" />
-                    <p className="connection-text">{text.investor}</p>
-                </div>
-                <div className="connection connection-mentor">
-                    <img src={mentorImg} alt="mentor icon" />
-                    <p className="connection-text">{text.mentorship}</p>
+                <div className="connections-section__wrapper">
+                    <div className="connection connection-student">
+                        <div className="connection__img-block">
+                            <img src={studentIcon} alt="student icon" />
+                        </div>
+                        <p className="connection-text">{text.student}</p>
+                    </div>
+                    <div className="connection connection-investor">
+                        <div className="connection__img-block">
+                            <img src={investorImg} alt="student icon" />
+                        </div>
+                        <p className="connection-text">{text.investor}</p>
+                    </div>
+                    <div className="connection connection-partner">
+                        <div className="connection__img-block">
+                            <img src={partnerImg} alt="student icon" />
+                        </div>
+                        <p className="connection-text">{text.partnership}</p>
+                    </div>
+                    <div className="connection connection-mentor">
+                        <div className="connection__img-block">
+                            <img src={mentorImg} alt="student icon" />
+                        </div>
+                        <p className="connection-text">{text.mentorship}</p>
+                    </div>
                 </div>
             </section>
 
