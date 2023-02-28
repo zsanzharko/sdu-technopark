@@ -3,7 +3,8 @@
     display: flex;
     flex-direction: row;
     height: 100%;
-    background: url('../../assets/images/sdu.png') bottom, url('../../assets/images/back-actual.png') fixed repeat;
+    background: url('../../assets/images/sdu.png') bottom, #2f2f2f fixed repeat;
+    background-blend-mode: multiply;
     background-size: contain, cover;
     background-repeat: no-repeat;
     .to-the-top{
@@ -16,16 +17,13 @@
             width: 100%;
             height: 100%;
             border: none;
-            background-color: #0A2354;
+            background-color: #626262;
             background-attachment: fixed;
             opacity: 0;
             color: $lightness-color;
             justify-content: center;
             .scroll-to-top{
-                background-image: url("../../assets/images/UpSelection.png");
-                background-repeat: no-repeat;
-                background-position: top ;
-                background-size:cover;
+                background-color: #626262;
                 background-attachment: fixed;
             }
 
@@ -33,13 +31,12 @@
                 position: inherit;
                 width: 100%;
                 height: 100%;
-                background-color: #0A2354;
                 border: none;
             }
             
         }
         >button:hover{
-            opacity: 0.8;
+            opacity: 0.5;
             cursor: pointer;
         }
     }
@@ -58,7 +55,7 @@
                 font-family: 'Roboto';
                 font-style: normal;
                 font-weight: 100;
-                font-size: 96px;
+                font-size: 64px;
                 line-height: 112px;
                 text-align: center;
                 text-transform: uppercase;

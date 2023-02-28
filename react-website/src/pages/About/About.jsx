@@ -172,8 +172,6 @@ function About() {
         <button className="banner-arrow arrowDown" onClick={() => {
           document.querySelector(".about-section.second").scrollIntoView({behavior: "smooth", block: "start"});
         }}>❮</button>
-        <div className="color-transition left"></div>
-        <div className="color-transition right"></div>
       </section>
 
       <section className="about-section second">
